@@ -22,23 +22,32 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model {
     static TntWorldReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cg90bnQtd29ybGQucHJvdG8SD2ZhcHJvLnRudC53b3JsZBoZZ29vZ2xlL3By",
-            "b3RvYnVmL2FueS5wcm90byIHCgVXb3JsZEIvqgIsVW5pRG9ydG11bmQuRmFQ",
-            "cm9TUzE3UDNHMS5NYXBHZW5lcmF0b3IuTW9kZWxiBnByb3RvMw=="));
+            "Cg90bnQtd29ybGQucHJvdG8SD2ZhcHJvLnRudC53b3JsZCILCglXb3JsZElu",
+            "Zm8iOgoLV29ybGRDb2x1bW4SKwoGQmxvY2tzGAEgAygLMhsuZmFwcm8udG50",
+            "LndvcmxkLldvcmxkQmxvY2siRAoKV29ybGRCbG9jaxI2Cg5QYXJ0aWNsZUZp",
+            "ZWxkcxgBIAMoCzIeLmZhcHJvLnRudC53b3JsZC5QYXJ0aWNsZUZpZWxkIjgK",
+            "DVBhcnRpY2xlRmllbGQSDAoEVHlwZRgBIAEoDRIZChFOdW1iZXJPZlBhcnRp",
+            "Y2xlcxgCIAEoDSI2ChFHZW5lcmF0b3JTZXR0aW5ncxIPCgdMb3dTZWVkGAEg",
+            "ASgGEhAKCEhpZ2hTZWVkGAIgASgGQi+qAixVbmlEb3J0bXVuZC5GYVByb1NT",
+            "MTdQM0cxLk1hcEdlbmVyYXRvci5Nb2RlbGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, },
+          new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.World), global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.World.Parser, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldInfo), global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldInfo.Parser, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldColumn), global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldColumn.Parser, new[]{ "Blocks" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldBlock), global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldBlock.Parser, new[]{ "ParticleFields" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.ParticleField), global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.ParticleField.Parser, new[]{ "Type", "NumberOfParticles" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.GeneratorSettings), global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.GeneratorSettings.Parser, new[]{ "LowSeed", "HighSeed" }, null, null, null)
           }));
     }
     #endregion
 
   }
   #region Messages
-  public sealed partial class World : pb::IMessage<World> {
-    private static readonly pb::MessageParser<World> _parser = new pb::MessageParser<World>(() => new World());
+  public sealed partial class WorldInfo : pb::IMessage<WorldInfo> {
+    private static readonly pb::MessageParser<WorldInfo> _parser = new pb::MessageParser<WorldInfo>(() => new WorldInfo());
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<World> Parser { get { return _parser; } }
+    public static pb::MessageParser<WorldInfo> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -51,28 +60,28 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public World() {
+    public WorldInfo() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public World(World other) : this() {
+    public WorldInfo(WorldInfo other) : this() {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public World Clone() {
-      return new World(this);
+    public WorldInfo Clone() {
+      return new WorldInfo(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as World);
+      return Equals(other as WorldInfo);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(World other) {
+    public bool Equals(WorldInfo other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -104,7 +113,7 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(World other) {
+    public void MergeFrom(WorldInfo other) {
       if (other == null) {
         return;
       }
@@ -118,6 +127,514 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model {
           default:
             input.SkipLastField();
             break;
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class WorldColumn : pb::IMessage<WorldColumn> {
+    private static readonly pb::MessageParser<WorldColumn> _parser = new pb::MessageParser<WorldColumn>(() => new WorldColumn());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<WorldColumn> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.TntWorldReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public WorldColumn() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public WorldColumn(WorldColumn other) : this() {
+      blocks_ = other.blocks_.Clone();
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public WorldColumn Clone() {
+      return new WorldColumn(this);
+    }
+
+    /// <summary>Field number for the "Blocks" field.</summary>
+    public const int BlocksFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldBlock> _repeated_blocks_codec
+        = pb::FieldCodec.ForMessage(10, global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldBlock.Parser);
+    private readonly pbc::RepeatedField<global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldBlock> blocks_ = new pbc::RepeatedField<global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldBlock>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldBlock> Blocks {
+      get { return blocks_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as WorldColumn);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(WorldColumn other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!blocks_.Equals(other.blocks_)) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= blocks_.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      blocks_.WriteTo(output, _repeated_blocks_codec);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      size += blocks_.CalculateSize(_repeated_blocks_codec);
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(WorldColumn other) {
+      if (other == null) {
+        return;
+      }
+      blocks_.Add(other.blocks_);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            blocks_.AddEntriesFrom(input, _repeated_blocks_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class WorldBlock : pb::IMessage<WorldBlock> {
+    private static readonly pb::MessageParser<WorldBlock> _parser = new pb::MessageParser<WorldBlock>(() => new WorldBlock());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<WorldBlock> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.TntWorldReflection.Descriptor.MessageTypes[2]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public WorldBlock() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public WorldBlock(WorldBlock other) : this() {
+      particleFields_ = other.particleFields_.Clone();
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public WorldBlock Clone() {
+      return new WorldBlock(this);
+    }
+
+    /// <summary>Field number for the "ParticleFields" field.</summary>
+    public const int ParticleFieldsFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.ParticleField> _repeated_particleFields_codec
+        = pb::FieldCodec.ForMessage(10, global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.ParticleField.Parser);
+    private readonly pbc::RepeatedField<global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.ParticleField> particleFields_ = new pbc::RepeatedField<global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.ParticleField>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.ParticleField> ParticleFields {
+      get { return particleFields_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as WorldBlock);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(WorldBlock other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!particleFields_.Equals(other.particleFields_)) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= particleFields_.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      particleFields_.WriteTo(output, _repeated_particleFields_codec);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      size += particleFields_.CalculateSize(_repeated_particleFields_codec);
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(WorldBlock other) {
+      if (other == null) {
+        return;
+      }
+      particleFields_.Add(other.particleFields_);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            particleFields_.AddEntriesFrom(input, _repeated_particleFields_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class ParticleField : pb::IMessage<ParticleField> {
+    private static readonly pb::MessageParser<ParticleField> _parser = new pb::MessageParser<ParticleField>(() => new ParticleField());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ParticleField> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.TntWorldReflection.Descriptor.MessageTypes[3]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ParticleField() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ParticleField(ParticleField other) : this() {
+      type_ = other.type_;
+      numberOfParticles_ = other.numberOfParticles_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ParticleField Clone() {
+      return new ParticleField(this);
+    }
+
+    /// <summary>Field number for the "Type" field.</summary>
+    public const int TypeFieldNumber = 1;
+    private uint type_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public uint Type {
+      get { return type_; }
+      set {
+        type_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "NumberOfParticles" field.</summary>
+    public const int NumberOfParticlesFieldNumber = 2;
+    private uint numberOfParticles_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public uint NumberOfParticles {
+      get { return numberOfParticles_; }
+      set {
+        numberOfParticles_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ParticleField);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ParticleField other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Type != other.Type) return false;
+      if (NumberOfParticles != other.NumberOfParticles) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Type != 0) hash ^= Type.GetHashCode();
+      if (NumberOfParticles != 0) hash ^= NumberOfParticles.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Type != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(Type);
+      }
+      if (NumberOfParticles != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(NumberOfParticles);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Type != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Type);
+      }
+      if (NumberOfParticles != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(NumberOfParticles);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ParticleField other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Type != 0) {
+        Type = other.Type;
+      }
+      if (other.NumberOfParticles != 0) {
+        NumberOfParticles = other.NumberOfParticles;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Type = input.ReadUInt32();
+            break;
+          }
+          case 16: {
+            NumberOfParticles = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class GeneratorSettings : pb::IMessage<GeneratorSettings> {
+    private static readonly pb::MessageParser<GeneratorSettings> _parser = new pb::MessageParser<GeneratorSettings>(() => new GeneratorSettings());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<GeneratorSettings> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.TntWorldReflection.Descriptor.MessageTypes[4]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GeneratorSettings() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GeneratorSettings(GeneratorSettings other) : this() {
+      lowSeed_ = other.lowSeed_;
+      highSeed_ = other.highSeed_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GeneratorSettings Clone() {
+      return new GeneratorSettings(this);
+    }
+
+    /// <summary>Field number for the "LowSeed" field.</summary>
+    public const int LowSeedFieldNumber = 1;
+    private ulong lowSeed_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ulong LowSeed {
+      get { return lowSeed_; }
+      set {
+        lowSeed_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "HighSeed" field.</summary>
+    public const int HighSeedFieldNumber = 2;
+    private ulong highSeed_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ulong HighSeed {
+      get { return highSeed_; }
+      set {
+        highSeed_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as GeneratorSettings);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(GeneratorSettings other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (LowSeed != other.LowSeed) return false;
+      if (HighSeed != other.HighSeed) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (LowSeed != 0UL) hash ^= LowSeed.GetHashCode();
+      if (HighSeed != 0UL) hash ^= HighSeed.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (LowSeed != 0UL) {
+        output.WriteRawTag(9);
+        output.WriteFixed64(LowSeed);
+      }
+      if (HighSeed != 0UL) {
+        output.WriteRawTag(17);
+        output.WriteFixed64(HighSeed);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (LowSeed != 0UL) {
+        size += 1 + 8;
+      }
+      if (HighSeed != 0UL) {
+        size += 1 + 8;
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(GeneratorSettings other) {
+      if (other == null) {
+        return;
+      }
+      if (other.LowSeed != 0UL) {
+        LowSeed = other.LowSeed;
+      }
+      if (other.HighSeed != 0UL) {
+        HighSeed = other.HighSeed;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 9: {
+            LowSeed = input.ReadFixed64();
+            break;
+          }
+          case 17: {
+            HighSeed = input.ReadFixed64();
+            break;
+          }
         }
       }
     }
