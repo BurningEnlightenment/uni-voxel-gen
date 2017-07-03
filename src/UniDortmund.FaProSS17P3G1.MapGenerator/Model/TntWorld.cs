@@ -22,22 +22,34 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model {
     static TntWorldReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cg90bnQtd29ybGQucHJvdG8SD2ZhcHJvLnRudC53b3JsZCILCglXb3JsZElu",
-            "Zm8iOgoLV29ybGRDb2x1bW4SKwoGQmxvY2tzGAEgAygLMhsuZmFwcm8udG50",
-            "LndvcmxkLldvcmxkQmxvY2siRAoKV29ybGRCbG9jaxI2Cg5QYXJ0aWNsZUZp",
-            "ZWxkcxgBIAMoCzIeLmZhcHJvLnRudC53b3JsZC5QYXJ0aWNsZUZpZWxkIjgK",
-            "DVBhcnRpY2xlRmllbGQSDAoEVHlwZRgBIAEoDRIZChFOdW1iZXJPZlBhcnRp",
-            "Y2xlcxgCIAEoDSI2ChFHZW5lcmF0b3JTZXR0aW5ncxIPCgdMb3dTZWVkGAEg",
-            "ASgGEhAKCEhpZ2hTZWVkGAIgASgGQi+qAixVbmlEb3J0bXVuZC5GYVByb1NT",
-            "MTdQM0cxLk1hcEdlbmVyYXRvci5Nb2RlbGIGcHJvdG8z"));
+            "Cg90bnQtd29ybGQucHJvdG8SD2ZhcHJvLnRudC53b3JsZCL8BAoJV29ybGRJ",
+            "bmZvEj8KCUdlbmVyYXRvchgKIAEoCzIsLmZhcHJvLnRudC53b3JsZC5Xb3Js",
+            "ZEluZm8uR2VuZXJhdG9yU2V0dGluZ3MarQQKEUdlbmVyYXRvclNldHRpbmdz",
+            "EgwKBFNlZWQYASABKAYSVwoOQmlvbWVHZW5lcmF0b3IYAiABKA4yPy5mYXBy",
+            "by50bnQud29ybGQuV29ybGRJbmZvLkdlbmVyYXRvclNldHRpbmdzLkJpb21l",
+            "R2VuZXJhdG9yVHlwZRJbChBEZW5zaXR5R2VuZXJhdG9yGAMgASgOMkEuZmFw",
+            "cm8udG50LndvcmxkLldvcmxkSW5mby5HZW5lcmF0b3JTZXR0aW5ncy5EZW5z",
+            "aXR5R2VuZXJhdG9yVHlwZRJbChBUZXJyYWluR2VuZXJhdG9yGAQgASgOMkEu",
+            "ZmFwcm8udG50LndvcmxkLldvcmxkSW5mby5HZW5lcmF0b3JTZXR0aW5ncy5U",
+            "ZXJyYWluR2VuZXJhdG9yVHlwZRJbChBEZXRhaWxzR2VuZXJhdG9yGAUgAygO",
+            "MkEuZmFwcm8udG50LndvcmxkLldvcmxkSW5mby5HZW5lcmF0b3JTZXR0aW5n",
+            "cy5EZXRhaWxzR2VuZXJhdG9yVHlwZSImChJCaW9tZUdlbmVyYXRvclR5cGUS",
+            "EAoMVW5pZm9ybUdyYXNzEAAiJQoURGVuc2l0eUdlbmVyYXRvclR5cGUSDQoJ",
+            "RmxhdFdvcmxkEAAiKQoUVGVycmFpbkdlbmVyYXRvclR5cGUSEQoNTWFpbkJs",
+            "b2NrT25seRAAIiAKFERldGFpbHNHZW5lcmF0b3JUeXBlEggKBE5vbmUQACI6",
+            "CgtXb3JsZENvbHVtbhIrCgZCbG9ja3MYASADKAsyGy5mYXByby50bnQud29y",
+            "bGQuV29ybGRCbG9jayJECgpXb3JsZEJsb2NrEjYKDlBhcnRpY2xlRmllbGRz",
+            "GAEgAygLMh4uZmFwcm8udG50LndvcmxkLlBhcnRpY2xlRmllbGQiOAoNUGFy",
+            "dGljbGVGaWVsZBIMCgRUeXBlGAEgASgNEhkKEU51bWJlck9mUGFydGljbGVz",
+            "GAIgASgNQi+qAixVbmlEb3J0bXVuZC5GYVByb1NTMTdQM0cxLk1hcEdlbmVy",
+            "YXRvci5Nb2RlbGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldInfo), global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldInfo.Parser, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldInfo), global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldInfo.Parser, new[]{ "Generator" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldInfo.Types.GeneratorSettings), global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldInfo.Types.GeneratorSettings.Parser, new[]{ "Seed", "BiomeGenerator", "DensityGenerator", "TerrainGenerator", "DetailsGenerator" }, null, new[]{ typeof(global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldInfo.Types.GeneratorSettings.Types.BiomeGeneratorType), typeof(global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldInfo.Types.GeneratorSettings.Types.DensityGeneratorType), typeof(global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldInfo.Types.GeneratorSettings.Types.TerrainGeneratorType), typeof(global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldInfo.Types.GeneratorSettings.Types.DetailsGeneratorType) }, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldColumn), global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldColumn.Parser, new[]{ "Blocks" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldBlock), global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldBlock.Parser, new[]{ "ParticleFields" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.ParticleField), global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.ParticleField.Parser, new[]{ "Type", "NumberOfParticles" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.GeneratorSettings), global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.GeneratorSettings.Parser, new[]{ "LowSeed", "HighSeed" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.ParticleField), global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.ParticleField.Parser, new[]{ "Type", "NumberOfParticles" }, null, null, null)
           }));
     }
     #endregion
@@ -68,11 +80,23 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public WorldInfo(WorldInfo other) : this() {
+      Generator = other.generator_ != null ? other.Generator.Clone() : null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public WorldInfo Clone() {
       return new WorldInfo(this);
+    }
+
+    /// <summary>Field number for the "Generator" field.</summary>
+    public const int GeneratorFieldNumber = 10;
+    private global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldInfo.Types.GeneratorSettings generator_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldInfo.Types.GeneratorSettings Generator {
+      get { return generator_; }
+      set {
+        generator_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -88,12 +112,14 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (!object.Equals(Generator, other.Generator)) return false;
       return true;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
+      if (generator_ != null) hash ^= Generator.GetHashCode();
       return hash;
     }
 
@@ -104,11 +130,18 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      if (generator_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(Generator);
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
+      if (generator_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Generator);
+      }
       return size;
     }
 
@@ -116,6 +149,12 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model {
     public void MergeFrom(WorldInfo other) {
       if (other == null) {
         return;
+      }
+      if (other.generator_ != null) {
+        if (generator_ == null) {
+          generator_ = new global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldInfo.Types.GeneratorSettings();
+        }
+        Generator.MergeFrom(other.Generator);
       }
     }
 
@@ -127,9 +166,268 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model {
           default:
             input.SkipLastField();
             break;
+          case 82: {
+            if (generator_ == null) {
+              generator_ = new global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldInfo.Types.GeneratorSettings();
+            }
+            input.ReadMessage(generator_);
+            break;
+          }
         }
       }
     }
+
+    #region Nested types
+    /// <summary>Container for nested types declared in the WorldInfo message type.</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static partial class Types {
+      public sealed partial class GeneratorSettings : pb::IMessage<GeneratorSettings> {
+        private static readonly pb::MessageParser<GeneratorSettings> _parser = new pb::MessageParser<GeneratorSettings>(() => new GeneratorSettings());
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public static pb::MessageParser<GeneratorSettings> Parser { get { return _parser; } }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public static pbr::MessageDescriptor Descriptor {
+          get { return global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldInfo.Descriptor.NestedTypes[0]; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        pbr::MessageDescriptor pb::IMessage.Descriptor {
+          get { return Descriptor; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public GeneratorSettings() {
+          OnConstruction();
+        }
+
+        partial void OnConstruction();
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public GeneratorSettings(GeneratorSettings other) : this() {
+          seed_ = other.seed_;
+          biomeGenerator_ = other.biomeGenerator_;
+          densityGenerator_ = other.densityGenerator_;
+          terrainGenerator_ = other.terrainGenerator_;
+          detailsGenerator_ = other.detailsGenerator_.Clone();
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public GeneratorSettings Clone() {
+          return new GeneratorSettings(this);
+        }
+
+        /// <summary>Field number for the "Seed" field.</summary>
+        public const int SeedFieldNumber = 1;
+        private ulong seed_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public ulong Seed {
+          get { return seed_; }
+          set {
+            seed_ = value;
+          }
+        }
+
+        /// <summary>Field number for the "BiomeGenerator" field.</summary>
+        public const int BiomeGeneratorFieldNumber = 2;
+        private global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldInfo.Types.GeneratorSettings.Types.BiomeGeneratorType biomeGenerator_ = 0;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldInfo.Types.GeneratorSettings.Types.BiomeGeneratorType BiomeGenerator {
+          get { return biomeGenerator_; }
+          set {
+            biomeGenerator_ = value;
+          }
+        }
+
+        /// <summary>Field number for the "DensityGenerator" field.</summary>
+        public const int DensityGeneratorFieldNumber = 3;
+        private global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldInfo.Types.GeneratorSettings.Types.DensityGeneratorType densityGenerator_ = 0;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldInfo.Types.GeneratorSettings.Types.DensityGeneratorType DensityGenerator {
+          get { return densityGenerator_; }
+          set {
+            densityGenerator_ = value;
+          }
+        }
+
+        /// <summary>Field number for the "TerrainGenerator" field.</summary>
+        public const int TerrainGeneratorFieldNumber = 4;
+        private global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldInfo.Types.GeneratorSettings.Types.TerrainGeneratorType terrainGenerator_ = 0;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldInfo.Types.GeneratorSettings.Types.TerrainGeneratorType TerrainGenerator {
+          get { return terrainGenerator_; }
+          set {
+            terrainGenerator_ = value;
+          }
+        }
+
+        /// <summary>Field number for the "DetailsGenerator" field.</summary>
+        public const int DetailsGeneratorFieldNumber = 5;
+        private static readonly pb::FieldCodec<global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldInfo.Types.GeneratorSettings.Types.DetailsGeneratorType> _repeated_detailsGenerator_codec
+            = pb::FieldCodec.ForEnum(42, x => (int) x, x => (global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldInfo.Types.GeneratorSettings.Types.DetailsGeneratorType) x);
+        private readonly pbc::RepeatedField<global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldInfo.Types.GeneratorSettings.Types.DetailsGeneratorType> detailsGenerator_ = new pbc::RepeatedField<global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldInfo.Types.GeneratorSettings.Types.DetailsGeneratorType>();
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public pbc::RepeatedField<global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldInfo.Types.GeneratorSettings.Types.DetailsGeneratorType> DetailsGenerator {
+          get { return detailsGenerator_; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public override bool Equals(object other) {
+          return Equals(other as GeneratorSettings);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public bool Equals(GeneratorSettings other) {
+          if (ReferenceEquals(other, null)) {
+            return false;
+          }
+          if (ReferenceEquals(other, this)) {
+            return true;
+          }
+          if (Seed != other.Seed) return false;
+          if (BiomeGenerator != other.BiomeGenerator) return false;
+          if (DensityGenerator != other.DensityGenerator) return false;
+          if (TerrainGenerator != other.TerrainGenerator) return false;
+          if(!detailsGenerator_.Equals(other.detailsGenerator_)) return false;
+          return true;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public override int GetHashCode() {
+          int hash = 1;
+          if (Seed != 0UL) hash ^= Seed.GetHashCode();
+          if (BiomeGenerator != 0) hash ^= BiomeGenerator.GetHashCode();
+          if (DensityGenerator != 0) hash ^= DensityGenerator.GetHashCode();
+          if (TerrainGenerator != 0) hash ^= TerrainGenerator.GetHashCode();
+          hash ^= detailsGenerator_.GetHashCode();
+          return hash;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public override string ToString() {
+          return pb::JsonFormatter.ToDiagnosticString(this);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public void WriteTo(pb::CodedOutputStream output) {
+          if (Seed != 0UL) {
+            output.WriteRawTag(9);
+            output.WriteFixed64(Seed);
+          }
+          if (BiomeGenerator != 0) {
+            output.WriteRawTag(16);
+            output.WriteEnum((int) BiomeGenerator);
+          }
+          if (DensityGenerator != 0) {
+            output.WriteRawTag(24);
+            output.WriteEnum((int) DensityGenerator);
+          }
+          if (TerrainGenerator != 0) {
+            output.WriteRawTag(32);
+            output.WriteEnum((int) TerrainGenerator);
+          }
+          detailsGenerator_.WriteTo(output, _repeated_detailsGenerator_codec);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public int CalculateSize() {
+          int size = 0;
+          if (Seed != 0UL) {
+            size += 1 + 8;
+          }
+          if (BiomeGenerator != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) BiomeGenerator);
+          }
+          if (DensityGenerator != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) DensityGenerator);
+          }
+          if (TerrainGenerator != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) TerrainGenerator);
+          }
+          size += detailsGenerator_.CalculateSize(_repeated_detailsGenerator_codec);
+          return size;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public void MergeFrom(GeneratorSettings other) {
+          if (other == null) {
+            return;
+          }
+          if (other.Seed != 0UL) {
+            Seed = other.Seed;
+          }
+          if (other.BiomeGenerator != 0) {
+            BiomeGenerator = other.BiomeGenerator;
+          }
+          if (other.DensityGenerator != 0) {
+            DensityGenerator = other.DensityGenerator;
+          }
+          if (other.TerrainGenerator != 0) {
+            TerrainGenerator = other.TerrainGenerator;
+          }
+          detailsGenerator_.Add(other.detailsGenerator_);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public void MergeFrom(pb::CodedInputStream input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                input.SkipLastField();
+                break;
+              case 9: {
+                Seed = input.ReadFixed64();
+                break;
+              }
+              case 16: {
+                biomeGenerator_ = (global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldInfo.Types.GeneratorSettings.Types.BiomeGeneratorType) input.ReadEnum();
+                break;
+              }
+              case 24: {
+                densityGenerator_ = (global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldInfo.Types.GeneratorSettings.Types.DensityGeneratorType) input.ReadEnum();
+                break;
+              }
+              case 32: {
+                terrainGenerator_ = (global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldInfo.Types.GeneratorSettings.Types.TerrainGeneratorType) input.ReadEnum();
+                break;
+              }
+              case 42:
+              case 40: {
+                detailsGenerator_.AddEntriesFrom(input, _repeated_detailsGenerator_codec);
+                break;
+              }
+            }
+          }
+        }
+
+        #region Nested types
+        /// <summary>Container for nested types declared in the GeneratorSettings message type.</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public static partial class Types {
+          public enum BiomeGeneratorType {
+            [pbr::OriginalName("UniformGrass")] UniformGrass = 0,
+          }
+
+          public enum DensityGeneratorType {
+            [pbr::OriginalName("FlatWorld")] FlatWorld = 0,
+          }
+
+          public enum TerrainGeneratorType {
+            [pbr::OriginalName("MainBlockOnly")] MainBlockOnly = 0,
+          }
+
+          public enum DetailsGeneratorType {
+            [pbr::OriginalName("None")] None = 0,
+          }
+
+        }
+        #endregion
+
+      }
+
+    }
+    #endregion
 
   }
 
@@ -488,151 +786,6 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model {
           }
           case 16: {
             NumberOfParticles = input.ReadUInt32();
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  public sealed partial class GeneratorSettings : pb::IMessage<GeneratorSettings> {
-    private static readonly pb::MessageParser<GeneratorSettings> _parser = new pb::MessageParser<GeneratorSettings>(() => new GeneratorSettings());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<GeneratorSettings> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.TntWorldReflection.Descriptor.MessageTypes[4]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public GeneratorSettings() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public GeneratorSettings(GeneratorSettings other) : this() {
-      lowSeed_ = other.lowSeed_;
-      highSeed_ = other.highSeed_;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public GeneratorSettings Clone() {
-      return new GeneratorSettings(this);
-    }
-
-    /// <summary>Field number for the "LowSeed" field.</summary>
-    public const int LowSeedFieldNumber = 1;
-    private ulong lowSeed_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ulong LowSeed {
-      get { return lowSeed_; }
-      set {
-        lowSeed_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "HighSeed" field.</summary>
-    public const int HighSeedFieldNumber = 2;
-    private ulong highSeed_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ulong HighSeed {
-      get { return highSeed_; }
-      set {
-        highSeed_ = value;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as GeneratorSettings);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(GeneratorSettings other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (LowSeed != other.LowSeed) return false;
-      if (HighSeed != other.HighSeed) return false;
-      return true;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (LowSeed != 0UL) hash ^= LowSeed.GetHashCode();
-      if (HighSeed != 0UL) hash ^= HighSeed.GetHashCode();
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (LowSeed != 0UL) {
-        output.WriteRawTag(9);
-        output.WriteFixed64(LowSeed);
-      }
-      if (HighSeed != 0UL) {
-        output.WriteRawTag(17);
-        output.WriteFixed64(HighSeed);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (LowSeed != 0UL) {
-        size += 1 + 8;
-      }
-      if (HighSeed != 0UL) {
-        size += 1 + 8;
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(GeneratorSettings other) {
-      if (other == null) {
-        return;
-      }
-      if (other.LowSeed != 0UL) {
-        LowSeed = other.LowSeed;
-      }
-      if (other.HighSeed != 0UL) {
-        HighSeed = other.HighSeed;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            input.SkipLastField();
-            break;
-          case 9: {
-            LowSeed = input.ReadFixed64();
-            break;
-          }
-          case 17: {
-            HighSeed = input.ReadFixed64();
             break;
           }
         }
