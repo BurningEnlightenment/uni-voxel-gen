@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package fapro.tnt.world;
+option csharp_namespace = "UniDortmund.FaProSS17P3G1.MapGenerator.Model";
+
+message WorldInfo
+{
+}
+
+message WorldColumn
+{
+    repeated WorldBlock Blocks = 1;
+}
+
+message WorldBlock
+{
+    repeated ParticleField ParticleFields = 1;
+}
+
+message ParticleField
+{
+    uint32 Type = 1;
+    uint32 NumberOfParticles = 2;
+}
+
+message GeneratorSettings
+{
+    fixed64 LowSeed = 1;
+    fixed64 HighSeed = 2;
+}
