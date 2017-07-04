@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Linq;
 using NotEnoughTime.Utils.Random;
 using UniDortmund.FaProSS17P3G1.MapGenerator.Algorithm;
 
@@ -20,10 +21,11 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline
             DetailsGenerators = detailsGenerators.ToImmutableArray();
 
             var seeder = XoroShiro128Plus.Create(seed);
-            foreach (var noisyGenerator in DetailsGenerators.CastArray<INoisyGenerator>()
-                .Add(BiomeGenerator)
-                .Add(DensityGenerator)
-                .Add(TerrainGenerator))
+            foreach (var noisyGenerator in Enumerable.Empty<INoisyGenerator>()
+                .Append(BiomeGenerator)
+                .Append(DensityGenerator)
+                .Append(TerrainGenerator)
+                .Concat(DetailsGenerators))
             {
                 noisyGenerator.NoiseGenerator
                     = new SimplexNoiseGenerator(seeder.Next64Bits());
