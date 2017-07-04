@@ -48,12 +48,14 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline
 
         public static ComposedGenerator CreateFrom(WorldInfo generatorSettings)
         {
+
             throw new NotImplementedException();
         }
 
+        /*
         public ComposedGenerator Create()
             => new ComposedGenerator(Seed, BiomeGenerator, DensityGenerator, TerrainGenerator, DetailsGenerators);
-
+            */
         public GeneratorComposer WithSeed(ulong seed)
             => SetProp(out Seed, seed);
 

@@ -4,5 +4,7 @@
     {
         float this[float x, float y] { get; }
         float this[float x, float y, float z] { get; }
+
+        ulong Seed { get; set; }
     }
 }
