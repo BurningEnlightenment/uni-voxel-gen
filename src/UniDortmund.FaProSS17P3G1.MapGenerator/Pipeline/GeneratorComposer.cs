@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Runtime.CompilerServices;
-using static UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldInfo.Types;
-using static UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldInfo.Types.GeneratorSettings.Types;
+using UniDortmund.FaProSS17P3G1.MapGenerator.Model;
+using static UniDortmund.FaProSS17P3G1.MapGenerator.Model.BiomeGeneratorSettings.Types;
+using static UniDortmund.FaProSS17P3G1.MapGenerator.Model.DensityGeneratorSettings.Types;
+using static UniDortmund.FaProSS17P3G1.MapGenerator.Model.TerrainGeneratorSettings.Types;
+using static UniDortmund.FaProSS17P3G1.MapGenerator.Model.DetailsGeneratorSettings.Types;
 
 namespace UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline
 {
@@ -13,7 +16,7 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline
 
         private static readonly ImmutableDictionary<BiomeGeneratorType, GeneratorFactory<IBiomeGenerator>> AvBiomeGenerators
             = ImmutableDictionary<BiomeGeneratorType, GeneratorFactory<IBiomeGenerator>>.Empty
-                .Add(BiomeGeneratorType.UniformGrass, Biome.UniformBiomeGenerator.Create);
+                .Add(BiomeGeneratorType.Uniform, Biome.UniformBiomeGenerator.Create);
 
         private static readonly ImmutableDictionary<DensityGeneratorType, GeneratorFactory<IDensityGenerator>> AvDensityGenerators
             = ImmutableDictionary<DensityGeneratorType, GeneratorFactory<IDensityGenerator>>.Empty
@@ -43,7 +46,7 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline
             Seed = seed;
         }
 
-        public static ComposedGenerator CreateFrom(GeneratorSettings generatorSettings)
+        public static ComposedGenerator CreateFrom(WorldInfo generatorSettings)
         {
             throw new NotImplementedException();
         }

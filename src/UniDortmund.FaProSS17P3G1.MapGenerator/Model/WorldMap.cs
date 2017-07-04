@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using System.IO;
 using Google.Protobuf;
-using static UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldInfo.Types;
-using static UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldInfo.Types.GeneratorSettings.Types;
+using NotEnoughTime.Utils.Random;
+using static UniDortmund.FaProSS17P3G1.MapGenerator.Model.BiomeGeneratorSettings.Types;
+using static UniDortmund.FaProSS17P3G1.MapGenerator.Model.DensityGeneratorSettings.Types;
+using static UniDortmund.FaProSS17P3G1.MapGenerator.Model.TerrainGeneratorSettings.Types;
+using static UniDortmund.FaProSS17P3G1.MapGenerator.Model.DetailsGeneratorSettings.Types;
 
 namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
 {
@@ -28,25 +31,25 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
 
         public WorldInfo WorldInfo { get; }
 
-        public static WorldMap Create(string levelPath, ulong seed,
-            BiomeGeneratorType biomeGenerator = BiomeGeneratorType.UniformGrass,
-            DensityGeneratorType densityGenerator = DensityGeneratorType.FlatWorld,
-            TerrainGeneratorType terrainGenerator = TerrainGeneratorType.MainBlockOnly,
-            params DetailsGeneratorType[] detailsGenerators)
+        public static WorldMap Create(string levelPath, ulong seed)
         {
+            IUniformRandomBitGenerator prng = XoroShiro128Plus.Create(seed);
+
             var worldInfo = new WorldInfo
             {
-                Generator = new GeneratorSettings
+                BiomeGenerator = new BiomeGeneratorSettings
                 {
-                    BiomeGenerator = biomeGenerator,
-                    DensityGenerator = densityGenerator,
-                    TerrainGenerator = terrainGenerator
+                    Seed = prng.Next64Bits()
+                },
+                DensityGenerator = new DensityGeneratorSettings
+                {
+                    Seed = prng.Next64Bits()
+                },
+                TerrainGenerator = new TerrainGeneratorSettings
+                {
+                    Seed = prng.Next64Bits()
                 }
             };
-            if (detailsGenerators != null)
-            {
-                worldInfo.Generator.DetailsGenerator.AddRange(detailsGenerators);
-            }
 
             Directory.CreateDirectory(levelPath);
             using (var level = File.Create(Path.Combine(levelPath, WorldInfoFile)))

@@ -3,35 +3,14 @@ syntax = "proto3";
 package fapro.tnt.world;
 option csharp_namespace = "UniDortmund.FaProSS17P3G1.MapGenerator.Model";
 
-message WorldInfo
+////////////////////////////////////////////////////////////////////////////////
+// level format definition (*.column)
+enum ParticleType
 {
-    message GeneratorSettings
-    {
-        enum BiomeGeneratorType
-        {
-            UniformGrass = 0;
-        }
-        enum DensityGeneratorType
-        {
-            FlatWorld = 0;
-        }
-        enum TerrainGeneratorType
-        {
-            MainBlockOnly = 0;
-        }
-        enum DetailsGeneratorType
-        {
-            None = 0;
-        }
-
-        fixed64 Seed = 1;
-        BiomeGeneratorType BiomeGenerator = 2;
-        DensityGeneratorType DensityGenerator = 3;
-        TerrainGeneratorType TerrainGenerator = 4;
-        repeated DetailsGeneratorType DetailsGenerator = 5;
-    }
-
-    GeneratorSettings Generator = 10;
+    PtDebug = 0;
+    PtAir = 1;
+    PtWater = 2;
+    PtDirt = 3;
 }
 
 message WorldColumn
@@ -48,4 +27,85 @@ message ParticleField
 {
     uint32 Type = 1;
     uint32 NumberOfParticles = 2;
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+// generator settings (level.dat)
+enum BiomeType
+{
+    BioDebug = 0;
+    BioGrassland = 1;
+}
+
+message BiomeGeneratorSettings
+{
+    enum BiomeGeneratorType
+    {
+        Uniform = 0;
+    }
+
+    message UniformGeneratorSettings
+    {
+        BiomeType TargetBiomeType = 1;
+    }
+
+    BiomeGeneratorType Type = 1;
+    fixed64 Seed = 2;
+
+    oneof SpecificSettings
+    {
+        UniformGeneratorSettings UniformGenerator = 20; 
+    }
+}
+
+message DensityGeneratorSettings
+{
+    enum DensityGeneratorType
+    {
+        FlatWorld = 0;
+    }
+
+    message FlatWorldGeneratorSettings
+    {
+        int32 HeightLevel = 1;
+    }
+
+    DensityGeneratorType Type = 1;
+    fixed64 Seed = 2;
+
+    oneof SpecificSettings
+    {
+        FlatWorldGeneratorSettings FlatWorldGenerator = 20; 
+    }
+}
+
+message TerrainGeneratorSettings
+{
+    enum TerrainGeneratorType
+    {
+        MainBlockOnly = 0;
+    }
+
+    TerrainGeneratorType Type = 1;
+    fixed64 Seed = 2;
+}
+
+message DetailsGeneratorSettings
+{
+    enum DetailsGeneratorType
+    {
+        None = 0;
+    }
+
+    DetailsGeneratorType Type = 1;
+    fixed64 Seed = 2;
+}
+
+message WorldInfo
+{
+    BiomeGeneratorSettings BiomeGenerator = 2;
+    DensityGeneratorSettings DensityGenerator = 3;
+    TerrainGeneratorSettings TerrainGenerator = 4;
+    repeated DetailsGeneratorSettings DetailsGenerators = 5;
 }
