@@ -25,41 +25,41 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model {
             "Cg90bnQtd29ybGQucHJvdG8SD2ZhcHJvLnRudC53b3JsZCI6CgtXb3JsZENv",
             "bHVtbhIrCgZCbG9ja3MYASADKAsyGy5mYXByby50bnQud29ybGQuV29ybGRC",
             "bG9jayJECgpXb3JsZEJsb2NrEjYKDlBhcnRpY2xlRmllbGRzGAEgAygLMh4u",
-            "ZmFwcm8udG50LndvcmxkLlBhcnRpY2xlRmllbGQiOAoNUGFydGljbGVGaWVs",
-            "ZBIMCgRUeXBlGAEgASgNEhkKEU51bWJlck9mUGFydGljbGVzGAIgASgNItYC",
-            "ChZCaW9tZUdlbmVyYXRvclNldHRpbmdzEkgKBFR5cGUYASABKA4yOi5mYXBy",
-            "by50bnQud29ybGQuQmlvbWVHZW5lcmF0b3JTZXR0aW5ncy5CaW9tZUdlbmVy",
-            "YXRvclR5cGUSDAoEU2VlZBgCIAEoBhJcChBVbmlmb3JtR2VuZXJhdG9yGBQg",
-            "ASgLMkAuZmFwcm8udG50LndvcmxkLkJpb21lR2VuZXJhdG9yU2V0dGluZ3Mu",
-            "VW5pZm9ybUdlbmVyYXRvclNldHRpbmdzSAAaTwoYVW5pZm9ybUdlbmVyYXRv",
-            "clNldHRpbmdzEjMKD1RhcmdldEJpb21lVHlwZRgBIAEoDjIaLmZhcHJvLnRu",
-            "dC53b3JsZC5CaW9tZVR5cGUiIQoSQmlvbWVHZW5lcmF0b3JUeXBlEgsKB1Vu",
-            "aWZvcm0QAEISChBTcGVjaWZpY1NldHRpbmdzIsgCChhEZW5zaXR5R2VuZXJh",
-            "dG9yU2V0dGluZ3MSTAoEVHlwZRgBIAEoDjI+LmZhcHJvLnRudC53b3JsZC5E",
-            "ZW5zaXR5R2VuZXJhdG9yU2V0dGluZ3MuRGVuc2l0eUdlbmVyYXRvclR5cGUS",
-            "DAoEU2VlZBgCIAEoBhJiChJGbGF0V29ybGRHZW5lcmF0b3IYFCABKAsyRC5m",
-            "YXByby50bnQud29ybGQuRGVuc2l0eUdlbmVyYXRvclNldHRpbmdzLkZsYXRX",
-            "b3JsZEdlbmVyYXRvclNldHRpbmdzSAAaMQoaRmxhdFdvcmxkR2VuZXJhdG9y",
-            "U2V0dGluZ3MSEwoLSGVpZ2h0TGV2ZWwYASABKAUiJQoURGVuc2l0eUdlbmVy",
-            "YXRvclR5cGUSDQoJRmxhdFdvcmxkEABCEgoQU3BlY2lmaWNTZXR0aW5ncyKh",
-            "AQoYVGVycmFpbkdlbmVyYXRvclNldHRpbmdzEkwKBFR5cGUYASABKA4yPi5m",
-            "YXByby50bnQud29ybGQuVGVycmFpbkdlbmVyYXRvclNldHRpbmdzLlRlcnJh",
-            "aW5HZW5lcmF0b3JUeXBlEgwKBFNlZWQYAiABKAYiKQoUVGVycmFpbkdlbmVy",
-            "YXRvclR5cGUSEQoNTWFpbkJsb2NrT25seRAAIpgBChhEZXRhaWxzR2VuZXJh",
-            "dG9yU2V0dGluZ3MSTAoEVHlwZRgBIAEoDjI+LmZhcHJvLnRudC53b3JsZC5E",
-            "ZXRhaWxzR2VuZXJhdG9yU2V0dGluZ3MuRGV0YWlsc0dlbmVyYXRvclR5cGUS",
-            "DAoEU2VlZBgCIAEoBiIgChREZXRhaWxzR2VuZXJhdG9yVHlwZRIICgROb25l",
-            "EAAinAIKCVdvcmxkSW5mbxI/Cg5CaW9tZUdlbmVyYXRvchgCIAEoCzInLmZh",
-            "cHJvLnRudC53b3JsZC5CaW9tZUdlbmVyYXRvclNldHRpbmdzEkMKEERlbnNp",
-            "dHlHZW5lcmF0b3IYAyABKAsyKS5mYXByby50bnQud29ybGQuRGVuc2l0eUdl",
-            "bmVyYXRvclNldHRpbmdzEkMKEFRlcnJhaW5HZW5lcmF0b3IYBCABKAsyKS5m",
-            "YXByby50bnQud29ybGQuVGVycmFpbkdlbmVyYXRvclNldHRpbmdzEkQKEURl",
-            "dGFpbHNHZW5lcmF0b3JzGAUgAygLMikuZmFwcm8udG50LndvcmxkLkRldGFp",
-            "bHNHZW5lcmF0b3JTZXR0aW5ncyo/CgxQYXJ0aWNsZVR5cGUSCwoHUHREZWJ1",
-            "ZxAAEgkKBVB0QWlyEAESCwoHUHRXYXRlchACEgoKBlB0RGlydBADKisKCUJp",
-            "b21lVHlwZRIMCghCaW9EZWJ1ZxAAEhAKDEJpb0dyYXNzbGFuZBABQi+qAixV",
-            "bmlEb3J0bXVuZC5GYVByb1NTMTdQM0cxLk1hcEdlbmVyYXRvci5Nb2RlbGIG",
-            "cHJvdG8z"));
+            "ZmFwcm8udG50LndvcmxkLlBhcnRpY2xlRmllbGQiVwoNUGFydGljbGVGaWVs",
+            "ZBIrCgRUeXBlGAEgASgOMh0uZmFwcm8udG50LndvcmxkLlBhcnRpY2xlVHlw",
+            "ZRIZChFOdW1iZXJPZlBhcnRpY2xlcxgCIAEoDSLWAgoWQmlvbWVHZW5lcmF0",
+            "b3JTZXR0aW5ncxJICgRUeXBlGAEgASgOMjouZmFwcm8udG50LndvcmxkLkJp",
+            "b21lR2VuZXJhdG9yU2V0dGluZ3MuQmlvbWVHZW5lcmF0b3JUeXBlEgwKBFNl",
+            "ZWQYAiABKAYSXAoQVW5pZm9ybUdlbmVyYXRvchgUIAEoCzJALmZhcHJvLnRu",
+            "dC53b3JsZC5CaW9tZUdlbmVyYXRvclNldHRpbmdzLlVuaWZvcm1HZW5lcmF0",
+            "b3JTZXR0aW5nc0gAGk8KGFVuaWZvcm1HZW5lcmF0b3JTZXR0aW5ncxIzCg9U",
+            "YXJnZXRCaW9tZVR5cGUYASABKA4yGi5mYXByby50bnQud29ybGQuQmlvbWVU",
+            "eXBlIiEKEkJpb21lR2VuZXJhdG9yVHlwZRILCgdVbmlmb3JtEABCEgoQU3Bl",
+            "Y2lmaWNTZXR0aW5ncyLIAgoYRGVuc2l0eUdlbmVyYXRvclNldHRpbmdzEkwK",
+            "BFR5cGUYASABKA4yPi5mYXByby50bnQud29ybGQuRGVuc2l0eUdlbmVyYXRv",
+            "clNldHRpbmdzLkRlbnNpdHlHZW5lcmF0b3JUeXBlEgwKBFNlZWQYAiABKAYS",
+            "YgoSRmxhdFdvcmxkR2VuZXJhdG9yGBQgASgLMkQuZmFwcm8udG50Lndvcmxk",
+            "LkRlbnNpdHlHZW5lcmF0b3JTZXR0aW5ncy5GbGF0V29ybGRHZW5lcmF0b3JT",
+            "ZXR0aW5nc0gAGjEKGkZsYXRXb3JsZEdlbmVyYXRvclNldHRpbmdzEhMKC0hl",
+            "aWdodExldmVsGAEgASgFIiUKFERlbnNpdHlHZW5lcmF0b3JUeXBlEg0KCUZs",
+            "YXRXb3JsZBAAQhIKEFNwZWNpZmljU2V0dGluZ3MioQEKGFRlcnJhaW5HZW5l",
+            "cmF0b3JTZXR0aW5ncxJMCgRUeXBlGAEgASgOMj4uZmFwcm8udG50Lndvcmxk",
+            "LlRlcnJhaW5HZW5lcmF0b3JTZXR0aW5ncy5UZXJyYWluR2VuZXJhdG9yVHlw",
+            "ZRIMCgRTZWVkGAIgASgGIikKFFRlcnJhaW5HZW5lcmF0b3JUeXBlEhEKDU1h",
+            "aW5CbG9ja09ubHkQACKYAQoYRGV0YWlsc0dlbmVyYXRvclNldHRpbmdzEkwK",
+            "BFR5cGUYASABKA4yPi5mYXByby50bnQud29ybGQuRGV0YWlsc0dlbmVyYXRv",
+            "clNldHRpbmdzLkRldGFpbHNHZW5lcmF0b3JUeXBlEgwKBFNlZWQYAiABKAYi",
+            "IAoURGV0YWlsc0dlbmVyYXRvclR5cGUSCAoETm9uZRAAIpwCCglXb3JsZElu",
+            "Zm8SPwoOQmlvbWVHZW5lcmF0b3IYAiABKAsyJy5mYXByby50bnQud29ybGQu",
+            "QmlvbWVHZW5lcmF0b3JTZXR0aW5ncxJDChBEZW5zaXR5R2VuZXJhdG9yGAMg",
+            "ASgLMikuZmFwcm8udG50LndvcmxkLkRlbnNpdHlHZW5lcmF0b3JTZXR0aW5n",
+            "cxJDChBUZXJyYWluR2VuZXJhdG9yGAQgASgLMikuZmFwcm8udG50Lndvcmxk",
+            "LlRlcnJhaW5HZW5lcmF0b3JTZXR0aW5ncxJEChFEZXRhaWxzR2VuZXJhdG9y",
+            "cxgFIAMoCzIpLmZhcHJvLnRudC53b3JsZC5EZXRhaWxzR2VuZXJhdG9yU2V0",
+            "dGluZ3MqPwoMUGFydGljbGVUeXBlEgsKB1B0RGVidWcQABIJCgVQdEFpchAB",
+            "EgsKB1B0V2F0ZXIQAhIKCgZQdERpcnQQAyorCglCaW9tZVR5cGUSDAoIQmlv",
+            "RGVidWcQABIQCgxCaW9HcmFzc2xhbmQQAUIvqgIsVW5pRG9ydG11bmQuRmFQ",
+            "cm9TUzE3UDNHMS5NYXBHZW5lcmF0b3IuTW9kZWxiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.ParticleType), typeof(global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.BiomeType), }, new pbr::GeneratedClrTypeInfo[] {
@@ -353,9 +353,9 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model {
 
     /// <summary>Field number for the "Type" field.</summary>
     public const int TypeFieldNumber = 1;
-    private uint type_;
+    private global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.ParticleType type_ = 0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public uint Type {
+    public global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.ParticleType Type {
       get { return type_; }
       set {
         type_ = value;
@@ -408,7 +408,7 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model {
     public void WriteTo(pb::CodedOutputStream output) {
       if (Type != 0) {
         output.WriteRawTag(8);
-        output.WriteUInt32(Type);
+        output.WriteEnum((int) Type);
       }
       if (NumberOfParticles != 0) {
         output.WriteRawTag(16);
@@ -420,7 +420,7 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model {
     public int CalculateSize() {
       int size = 0;
       if (Type != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Type);
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
       }
       if (NumberOfParticles != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(NumberOfParticles);
@@ -450,7 +450,7 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model {
             input.SkipLastField();
             break;
           case 8: {
-            Type = input.ReadUInt32();
+            type_ = (global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.ParticleType) input.ReadEnum();
             break;
           }
           case 16: {

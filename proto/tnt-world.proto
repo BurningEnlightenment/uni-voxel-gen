@@ -25,7 +25,7 @@ message WorldBlock
 
 message ParticleField
 {
-    uint32 Type = 1;
+    ParticleType Type = 1;
     uint32 NumberOfParticles = 2;
 }
 
