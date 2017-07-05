@@ -25,7 +25,7 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
             WorldInfo = worldInfo;
         }
 
-        public ColumnDummy this[int x, int y] => throw new NotImplementedException();
+        public UnpackedChunk this[int x, int y] => throw new NotImplementedException();
 
         public string LevelPath { get; }
 
