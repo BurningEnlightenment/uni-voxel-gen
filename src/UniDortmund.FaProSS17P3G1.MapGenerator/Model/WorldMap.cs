@@ -14,6 +14,12 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
     {
         private const string WorldInfoFile = "level.dat";
 
+        private readonly List<List<UnpackedColumn>> Data
+            = new List<List<UnpackedColumn>>();
+
+        private int mXOffset;
+        private int mYOffset;
+
         public WorldMap(string levelPath)
             : this(levelPath, ReadWorldInfoFile(levelPath))
         {
@@ -25,7 +31,40 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
             WorldInfo = worldInfo;
         }
 
-        public ColumnDummy this[int x, int y] => throw new NotImplementedException();
+        public UnpackedColumn this[int x, int y]
+        {
+            get
+            {
+                var realX = MapX();
+                var realY = MapY();
+
+                if (realX >= Data.Count)
+                {
+                    Data.Resize(realX + 1);
+                }
+
+                var row = Data[realX];
+                if (row == null)
+                {
+                    Data[realX] = row = new List<UnpackedColumn>(realY);
+                }
+                if (realY >= row.Count)
+                {
+                    row.Resize(realY + 1);
+                }
+
+                var column = row[realY];
+                if (column == null)
+                {
+                    row[realY] = column = new UnpackedColumn();
+                }
+
+                return column;
+
+                int MapX() => x - mXOffset;
+                int MapY() => y - mYOffset;
+            }
+        }
 
         public string LevelPath { get; }
 

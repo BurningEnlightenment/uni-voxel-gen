@@ -19,6 +19,14 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
         private BiomeType[,] mbiomeTypes;
         private List<UnpackedChunk> mChunks;
 
+        public UnpackedColumn()
+        {
+        }
+
+        public UnpackedColumn(WorldColumn data)
+        {
+        }
+
         public BiomeType this[int x, int y]
         {
             get => throw new NotImplementedException();
