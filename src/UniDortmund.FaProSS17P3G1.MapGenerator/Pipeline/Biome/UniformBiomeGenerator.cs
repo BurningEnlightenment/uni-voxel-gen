@@ -7,9 +7,19 @@ using UniDortmund.FaProSS17P3G1.MapGenerator.Model;
 
 namespace UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline.Biome
 {
-    public class UniformBiomeGenerator : IBiomeGenerator, IDeepClonable<UniformBiomeGenerator>
+    public class UniformBiomeGenerator : IBiomeGenerator
     {
         private BiomeType mBiomeType;
+
+        private UniformBiomeGenerator(BiomeType biomeType)
+        {
+            mBiomeType = biomeType;
+        }
+
+        private UniformBiomeGenerator(BiomeGeneratorSettings settings)
+        {
+            mBiomeType = settings.UniformGenerator.TargetBiomeType;
+        }
 
         public INoiseGenerator NoiseGenerator { set { } }
 
@@ -25,12 +35,19 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline.Biome
             }
         }
 
-        public static UniformBiomeGenerator Create() => new UniformBiomeGenerator();
+        public static UniformBiomeGenerator Create(BiomeGeneratorSettings settings)
+            => new UniformBiomeGenerator(settings);
 
-        public UniformBiomeGenerator Clone()
+        public void ApplyTo(WorldMap targetMap, int x, int y)
         {
-            return new UniformBiomeGenerator();
+            var col = targetMap[x, y];
+            for (var i = 0; i < Constants.ChunkDimension; ++i)
+            {
+                for (var j = 0; j < Constants.ChunkDimension; ++j)
+                {
+                    col[i, j] = mBiomeType;
+                }
+            }
         }
-        IBiomeGenerator IDeepClonable<IBiomeGenerator>.Clone() => Clone();
     }
 }

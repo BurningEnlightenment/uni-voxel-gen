@@ -1,70 +1,63 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text.RegularExpressions;
 using Google.Protobuf;
 using NotEnoughTime.Utils.Random;
-using static UniDortmund.FaProSS17P3G1.MapGenerator.Model.BiomeGeneratorSettings.Types;
-using static UniDortmund.FaProSS17P3G1.MapGenerator.Model.DensityGeneratorSettings.Types;
-using static UniDortmund.FaProSS17P3G1.MapGenerator.Model.TerrainGeneratorSettings.Types;
-using static UniDortmund.FaProSS17P3G1.MapGenerator.Model.DetailsGeneratorSettings.Types;
+using UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline;
 
 namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
 {
     public class WorldMap
     {
+        private const string ColumnFileNameRegexString = @"^([0-9A-Z]{8})-([0-9A-Z]{8})\.column$";
+        private static readonly Regex ColumnFileNameRegex = new Regex(ColumnFileNameRegexString, RegexOptions.Compiled);
         private const string WorldInfoFile = "level.dat";
 
-        private readonly List<List<UnpackedColumn>> Data
-            = new List<List<UnpackedColumn>>();
+        private readonly LazyMap<UnpackedColumn> mData
+            = new LazyMap<UnpackedColumn>();
 
-        private int mXOffset;
-        private int mYOffset;
-
+        /// <summary>
+        /// Opens an existing level directory.
+        /// </summary>
+        /// <param name="levelPath"></param>
         public WorldMap(string levelPath)
             : this(levelPath, ReadWorldInfoFile(levelPath))
         {
+            var levelDirInfo = new DirectoryInfo(LevelPath);
+            foreach (var columnFileInfo in levelDirInfo.EnumerateFiles())
+            {
+                var match = ColumnFileNameRegex.Match(columnFileInfo.Name);
+                if (!match.Success)
+                {
+                    continue;
+                }
+
+                var x = ParseCoord(match.Groups[1].Value);
+                var y = ParseCoord(match.Groups[2].Value);
+
+                using (var stream = columnFileInfo.OpenRead())
+                {
+                    var columnData = WorldColumn.Parser.ParseFrom(stream);
+                    mData[x, y] = new UnpackedColumn(columnData);
+                }
+            }
+
+            int ParseCoord(string val) => (int) Convert.ToUInt32(val, 16);
         }
 
-        private WorldMap(string levelPath, WorldInfo worldInfo)
+        /// <summary>
+        /// Create a new World Map based on the given world info.
+        /// </summary>
+        /// <param name="levelPath"></param>
+        /// <param name="worldInfo"></param>
+        public WorldMap(string levelPath, WorldInfo worldInfo)
         {
             LevelPath = levelPath;
             WorldInfo = worldInfo;
         }
 
-        public UnpackedColumn this[int x, int y]
-        {
-            get
-            {
-                var realX = MapX();
-                var realY = MapY();
-
-                if (realX >= Data.Count)
-                {
-                    Data.Resize(realX + 1);
-                }
-
-                var row = Data[realX];
-                if (row == null)
-                {
-                    Data[realX] = row = new List<UnpackedColumn>(realY);
-                }
-                if (realY >= row.Count)
-                {
-                    row.Resize(realY + 1);
-                }
-
-                var column = row[realY];
-                if (column == null)
-                {
-                    row[realY] = column = new UnpackedColumn();
-                }
-
-                return column;
-
-                int MapX() => x - mXOffset;
-                int MapY() => y - mYOffset;
-            }
-        }
+        public UnpackedColumn this[int x, int y] => mData[x, y];
 
         public string LevelPath { get; }
 

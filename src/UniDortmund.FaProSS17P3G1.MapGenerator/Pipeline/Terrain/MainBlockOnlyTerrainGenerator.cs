@@ -1,21 +1,21 @@
-﻿using NotEnoughTime.Utils;
+﻿using System;
+using NotEnoughTime.Utils;
 using UniDortmund.FaProSS17P3G1.MapGenerator.Algorithm;
 using UniDortmund.FaProSS17P3G1.MapGenerator.Model;
 
 namespace UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline.Terrain
 {
-    public class MainBlockOnlyTerrainGenerator : ITerrainGenerator, IDeepClonable<MainBlockOnlyTerrainGenerator>
+    public class MainBlockOnlyTerrainGenerator : ITerrainGenerator
     {
         public TerrainGeneratorSettings Settings { set { } }
 
         public INoiseGenerator NoiseGenerator { get; set; }
 
-        public static MainBlockOnlyTerrainGenerator Create() => new MainBlockOnlyTerrainGenerator();
+        public static MainBlockOnlyTerrainGenerator Create(TerrainGeneratorSettings _) => new MainBlockOnlyTerrainGenerator();
 
-        public MainBlockOnlyTerrainGenerator Clone()
+        public void ApplyTo(WorldMap targetMap, int x, int y)
         {
-            return new MainBlockOnlyTerrainGenerator();
+            throw new NotImplementedException();
         }
-        ITerrainGenerator IDeepClonable<ITerrainGenerator>.Clone() => Clone();
     }
 }

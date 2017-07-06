@@ -1,10 +1,11 @@
-﻿using NotEnoughTime.Utils;
+﻿using System;
+using NotEnoughTime.Utils;
 using UniDortmund.FaProSS17P3G1.MapGenerator.Algorithm;
 using UniDortmund.FaProSS17P3G1.MapGenerator.Model;
 
 namespace UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline.Details
 {
-    public class StubDetailsGenerator : IDetailsGenerator, IDeepClonable<StubDetailsGenerator>
+    public class StubDetailsGenerator : IDetailsGenerator
     {
         public INoiseGenerator NoiseGenerator { get; set; }
 
@@ -13,12 +14,11 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline.Details
             set { }
         }
 
-        public static StubDetailsGenerator Create() => new StubDetailsGenerator();
+        public static StubDetailsGenerator Create(DetailsGeneratorSettings _) => new StubDetailsGenerator();
 
-        public StubDetailsGenerator Clone()
+        public void ApplyTo(WorldMap targetMap, int x, int y)
         {
-            return new StubDetailsGenerator();
+            throw new NotImplementedException();
         }
-        IDetailsGenerator IDeepClonable<IDetailsGenerator>.Clone() => Clone();
     }
 }

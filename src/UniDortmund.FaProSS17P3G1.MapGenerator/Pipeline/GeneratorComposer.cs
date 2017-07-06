@@ -12,22 +12,22 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline
 {
     public class GeneratorComposer
     {
-        public delegate T GeneratorFactory<out T>();
+        public delegate T GeneratorFactory<out T, in TSettings>(TSettings settings);
 
-        private static readonly ImmutableDictionary<BiomeGeneratorType, GeneratorFactory<IBiomeGenerator>> AvBiomeGenerators
-            = ImmutableDictionary<BiomeGeneratorType, GeneratorFactory<IBiomeGenerator>>.Empty
+        private static readonly ImmutableDictionary<BiomeGeneratorType, GeneratorFactory<IBiomeGenerator, BiomeGeneratorSettings>> AvBiomeGenerators
+            = ImmutableDictionary<BiomeGeneratorType, GeneratorFactory<IBiomeGenerator, BiomeGeneratorSettings>>.Empty
                 .Add(BiomeGeneratorType.Uniform, Biome.UniformBiomeGenerator.Create);
 
-        private static readonly ImmutableDictionary<DensityGeneratorType, GeneratorFactory<IDensityGenerator>> AvDensityGenerators
-            = ImmutableDictionary<DensityGeneratorType, GeneratorFactory<IDensityGenerator>>.Empty
+        private static readonly ImmutableDictionary<DensityGeneratorType, GeneratorFactory<IDensityGenerator, DensityGeneratorSettings>> AvDensityGenerators
+            = ImmutableDictionary<DensityGeneratorType, GeneratorFactory<IDensityGenerator, DensityGeneratorSettings>>.Empty
                 .Add(DensityGeneratorType.FlatWorld, Density.FlatWorldGenerator.Create);
 
-        private static readonly ImmutableDictionary<TerrainGeneratorType, GeneratorFactory<ITerrainGenerator>> AvTerrainGenerators
-            = ImmutableDictionary<TerrainGeneratorType, GeneratorFactory<ITerrainGenerator>>.Empty
+        private static readonly ImmutableDictionary<TerrainGeneratorType, GeneratorFactory<ITerrainGenerator, TerrainGeneratorSettings>> AvTerrainGenerators
+            = ImmutableDictionary<TerrainGeneratorType, GeneratorFactory<ITerrainGenerator, TerrainGeneratorSettings>>.Empty
                 .Add(TerrainGeneratorType.MainBlockOnly, Terrain.MainBlockOnlyTerrainGenerator.Create);
 
-        public static readonly ImmutableDictionary<DetailsGeneratorType, GeneratorFactory<IDetailsGenerator>> AvDetailsGenerators
-            = ImmutableDictionary<DetailsGeneratorType, GeneratorFactory<IDetailsGenerator>>.Empty
+        public static readonly ImmutableDictionary<DetailsGeneratorType, GeneratorFactory<IDetailsGenerator, DetailsGeneratorSettings>> AvDetailsGenerators
+            = ImmutableDictionary<DetailsGeneratorType, GeneratorFactory<IDetailsGenerator, DetailsGeneratorSettings>>.Empty
                 .Add(DetailsGeneratorType.None, Details.StubDetailsGenerator.Create);
 
         public ulong Seed;
@@ -46,44 +46,21 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline
             Seed = seed;
         }
 
+        public static IBiomeGenerator DeriveBiomeGenerator(BiomeGeneratorSettings settings)
+            => AvBiomeGenerators[settings.Type](settings);
+
+        public static IDensityGenerator DeriveDensityGenerator(DensityGeneratorSettings settings)
+            => AvDensityGenerators[settings.Type](settings);
+
+        public static IDetailsGenerator DeriveDetailsGenerator(DetailsGeneratorSettings settings)
+            => AvDetailsGenerators[settings.Type](settings);
+
+        public static ITerrainGenerator DerivTerrainGenerator(TerrainGeneratorSettings settings)
+            => AvTerrainGenerators[settings.Type](settings);
+
         public static ComposedGenerator CreateFrom(WorldInfo generatorSettings)
         {
-
             throw new NotImplementedException();
-        }
-
-        /*
-        public ComposedGenerator Create()
-            => new ComposedGenerator(Seed, BiomeGenerator, DensityGenerator, TerrainGenerator, DetailsGenerators);
-            */
-        public GeneratorComposer WithSeed(ulong seed)
-            => SetProp(out Seed, seed);
-
-        public GeneratorComposer WithBiomeGenerator(IBiomeGenerator generator)
-            => SetProp(out BiomeGenerator, generator);
-        public GeneratorComposer WithBiomeGenerator(BiomeGeneratorType generatorType)
-            => WithBiomeGenerator(AvBiomeGenerators[generatorType]());
-
-        public GeneratorComposer WithDensityGenerator(IDensityGenerator generator)
-            => SetProp(out DensityGenerator, generator);
-        public GeneratorComposer WithDensityGenerator(DensityGeneratorType generatorType)
-            => WithDensityGenerator(AvDensityGenerators[generatorType]());
-
-        public GeneratorComposer WithDensityGenerator(ITerrainGenerator generator)
-            => SetProp(out TerrainGenerator, generator);
-        public GeneratorComposer WithDensityGenerator(TerrainGeneratorType generatorType)
-            => WithDensityGenerator(AvTerrainGenerators[generatorType]());
-
-        public GeneratorComposer WithDetailsGenerator(IDetailsGenerator generator)
-            => SetProp(out DetailsGenerators, DetailsGenerators.Add(generator));
-        public GeneratorComposer WithDetailsGenerator(DetailsGeneratorType generatorType)
-            => WithDetailsGenerator(AvDetailsGenerators[generatorType]());
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private GeneratorComposer SetProp<T>(out T prop, T value)
-        {
-            prop = value;
-            return this;
         }
     }
 }

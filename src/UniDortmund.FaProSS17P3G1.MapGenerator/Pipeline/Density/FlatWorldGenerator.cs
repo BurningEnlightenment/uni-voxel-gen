@@ -7,7 +7,7 @@ using UniDortmund.FaProSS17P3G1.MapGenerator.Model;
 
 namespace UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline.Density
 {
-    public class FlatWorldGenerator : IDensityGenerator, IDeepClonable<FlatWorldGenerator>
+    public class FlatWorldGenerator : IDensityGenerator
     {
         private int mWorldHeigth;
 
@@ -25,12 +25,11 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline.Density
             }
         }
 
-        public static FlatWorldGenerator Create() => new FlatWorldGenerator();
+        public static FlatWorldGenerator Create(DensityGeneratorSettings _) => new FlatWorldGenerator();
 
-        public FlatWorldGenerator Clone()
+        public void ApplyTo(WorldMap targetMap, int x, int y)
         {
-            return new FlatWorldGenerator();
+            throw new NotImplementedException();
         }
-        IDensityGenerator IDeepClonable<IDensityGenerator>.Clone() => Clone();
     }
 }
