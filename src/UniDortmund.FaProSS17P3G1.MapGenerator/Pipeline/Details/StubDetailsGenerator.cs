@@ -9,11 +9,6 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline.Details
     {
         public INoiseGenerator NoiseGenerator { get; set; }
 
-        public DetailsGeneratorSettings Settings
-        {
-            set { }
-        }
-
         public static StubDetailsGenerator Create(DetailsGeneratorSettings _) => new StubDetailsGenerator();
 
         public void ApplyTo(WorldMap targetMap, int x, int y)

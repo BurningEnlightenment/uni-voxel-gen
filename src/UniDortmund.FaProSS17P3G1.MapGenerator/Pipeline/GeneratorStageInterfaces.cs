@@ -16,21 +16,17 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline
 
     public interface IBiomeGenerator : INoisyGenerator
     {
-        BiomeGeneratorSettings Settings { set; }
     }
 
     public interface IDensityGenerator : INoisyGenerator
     {
-        DensityGeneratorSettings Settings { set; }
     }
 
     public interface IDetailsGenerator : INoisyGenerator
     {
-        DetailsGeneratorSettings Settings { set; }
     }
 
     public interface ITerrainGenerator : INoisyGenerator
     {
-        TerrainGeneratorSettings Settings { set; }
     }
 }

@@ -7,8 +7,6 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline.Terrain
 {
     public class MainBlockOnlyTerrainGenerator : ITerrainGenerator
     {
-        public TerrainGeneratorSettings Settings { set { } }
-
         public INoiseGenerator NoiseGenerator { get; set; }
 
         public static MainBlockOnlyTerrainGenerator Create(TerrainGeneratorSettings _) => new MainBlockOnlyTerrainGenerator();
