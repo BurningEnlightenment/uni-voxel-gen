@@ -21,5 +21,11 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator
                 list.AddRange(Enumerable.Repeat<T>(elem, size - current));
             }
         }
+
+        public static int ZigZagEnc(int val)
+            => (val << 1) ^ (val >> 31);
+
+        public static int ZigZagDec(int val)
+            => (int) ((uint) val >> 1) ^ -(val & 1);
     }
 }

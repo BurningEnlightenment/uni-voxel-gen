@@ -27,6 +27,21 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
         {
         }
 
+        public UnpackedChunk Chunk(int coord)
+        {
+            var enc = LibExtensions.ZigZagEnc(coord);
+            if (enc >= mChunks.Count)
+            {
+                mChunks.Resize(enc + 1);
+            }
+            var chunk = mChunks[enc];
+            if (chunk == null)
+            {
+                mChunks[enc] = chunk = new UnpackedChunk();
+            }
+            return chunk;
+        }
+
         public BiomeType this[int x, int y]
         {
             get => throw new NotImplementedException();
