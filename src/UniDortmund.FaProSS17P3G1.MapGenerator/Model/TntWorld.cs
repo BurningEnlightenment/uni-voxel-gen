@@ -35,31 +35,32 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model {
             "b3JTZXR0aW5nc0gAGk8KGFVuaWZvcm1HZW5lcmF0b3JTZXR0aW5ncxIzCg9U",
             "YXJnZXRCaW9tZVR5cGUYASABKA4yGi5mYXByby50bnQud29ybGQuQmlvbWVU",
             "eXBlIiEKEkJpb21lR2VuZXJhdG9yVHlwZRILCgdVbmlmb3JtEABCEgoQU3Bl",
-            "Y2lmaWNTZXR0aW5ncyLIAgoYRGVuc2l0eUdlbmVyYXRvclNldHRpbmdzEkwK",
+            "Y2lmaWNTZXR0aW5ncyLaAgoYRGVuc2l0eUdlbmVyYXRvclNldHRpbmdzEkwK",
             "BFR5cGUYASABKA4yPi5mYXByby50bnQud29ybGQuRGVuc2l0eUdlbmVyYXRv",
             "clNldHRpbmdzLkRlbnNpdHlHZW5lcmF0b3JUeXBlEgwKBFNlZWQYAiABKAYS",
             "YgoSRmxhdFdvcmxkR2VuZXJhdG9yGBQgASgLMkQuZmFwcm8udG50Lndvcmxk",
             "LkRlbnNpdHlHZW5lcmF0b3JTZXR0aW5ncy5GbGF0V29ybGRHZW5lcmF0b3JT",
-            "ZXR0aW5nc0gAGjEKGkZsYXRXb3JsZEdlbmVyYXRvclNldHRpbmdzEhMKC0hl",
-            "aWdodExldmVsGAEgASgFIiUKFERlbnNpdHlHZW5lcmF0b3JUeXBlEg0KCUZs",
-            "YXRXb3JsZBAAQhIKEFNwZWNpZmljU2V0dGluZ3MioQEKGFRlcnJhaW5HZW5l",
-            "cmF0b3JTZXR0aW5ncxJMCgRUeXBlGAEgASgOMj4uZmFwcm8udG50Lndvcmxk",
-            "LlRlcnJhaW5HZW5lcmF0b3JTZXR0aW5ncy5UZXJyYWluR2VuZXJhdG9yVHlw",
-            "ZRIMCgRTZWVkGAIgASgGIikKFFRlcnJhaW5HZW5lcmF0b3JUeXBlEhEKDU1h",
-            "aW5CbG9ja09ubHkQACKYAQoYRGV0YWlsc0dlbmVyYXRvclNldHRpbmdzEkwK",
-            "BFR5cGUYASABKA4yPi5mYXByby50bnQud29ybGQuRGV0YWlsc0dlbmVyYXRv",
-            "clNldHRpbmdzLkRldGFpbHNHZW5lcmF0b3JUeXBlEgwKBFNlZWQYAiABKAYi",
-            "IAoURGV0YWlsc0dlbmVyYXRvclR5cGUSCAoETm9uZRAAIpwCCglXb3JsZElu",
-            "Zm8SPwoOQmlvbWVHZW5lcmF0b3IYAiABKAsyJy5mYXByby50bnQud29ybGQu",
-            "QmlvbWVHZW5lcmF0b3JTZXR0aW5ncxJDChBEZW5zaXR5R2VuZXJhdG9yGAMg",
-            "ASgLMikuZmFwcm8udG50LndvcmxkLkRlbnNpdHlHZW5lcmF0b3JTZXR0aW5n",
-            "cxJDChBUZXJyYWluR2VuZXJhdG9yGAQgASgLMikuZmFwcm8udG50Lndvcmxk",
-            "LlRlcnJhaW5HZW5lcmF0b3JTZXR0aW5ncxJEChFEZXRhaWxzR2VuZXJhdG9y",
-            "cxgFIAMoCzIpLmZhcHJvLnRudC53b3JsZC5EZXRhaWxzR2VuZXJhdG9yU2V0",
-            "dGluZ3MqPwoMUGFydGljbGVUeXBlEgsKB1B0RGVidWcQABIJCgVQdEFpchAB",
-            "EgsKB1B0V2F0ZXIQAhIKCgZQdERpcnQQAyorCglCaW9tZVR5cGUSDAoIQmlv",
-            "RGVidWcQABIQCgxCaW9HcmFzc2xhbmQQAUIvqgIsVW5pRG9ydG11bmQuRmFQ",
-            "cm9TUzE3UDNHMS5NYXBHZW5lcmF0b3IuTW9kZWxiBnByb3RvMw=="));
+            "ZXR0aW5nc0gAGkMKGkZsYXRXb3JsZEdlbmVyYXRvclNldHRpbmdzEhEKCUNl",
+            "aWxMZXZlbBgBIAEoBRISCgpGbG9vckxldmVsGAIgASgFIiUKFERlbnNpdHlH",
+            "ZW5lcmF0b3JUeXBlEg0KCUZsYXRXb3JsZBAAQhIKEFNwZWNpZmljU2V0dGlu",
+            "Z3MioQEKGFRlcnJhaW5HZW5lcmF0b3JTZXR0aW5ncxJMCgRUeXBlGAEgASgO",
+            "Mj4uZmFwcm8udG50LndvcmxkLlRlcnJhaW5HZW5lcmF0b3JTZXR0aW5ncy5U",
+            "ZXJyYWluR2VuZXJhdG9yVHlwZRIMCgRTZWVkGAIgASgGIikKFFRlcnJhaW5H",
+            "ZW5lcmF0b3JUeXBlEhEKDU1haW5CbG9ja09ubHkQACKYAQoYRGV0YWlsc0dl",
+            "bmVyYXRvclNldHRpbmdzEkwKBFR5cGUYASABKA4yPi5mYXByby50bnQud29y",
+            "bGQuRGV0YWlsc0dlbmVyYXRvclNldHRpbmdzLkRldGFpbHNHZW5lcmF0b3JU",
+            "eXBlEgwKBFNlZWQYAiABKAYiIAoURGV0YWlsc0dlbmVyYXRvclR5cGUSCAoE",
+            "Tm9uZRAAIpwCCglXb3JsZEluZm8SPwoOQmlvbWVHZW5lcmF0b3IYAiABKAsy",
+            "Jy5mYXByby50bnQud29ybGQuQmlvbWVHZW5lcmF0b3JTZXR0aW5ncxJDChBE",
+            "ZW5zaXR5R2VuZXJhdG9yGAMgASgLMikuZmFwcm8udG50LndvcmxkLkRlbnNp",
+            "dHlHZW5lcmF0b3JTZXR0aW5ncxJDChBUZXJyYWluR2VuZXJhdG9yGAQgASgL",
+            "MikuZmFwcm8udG50LndvcmxkLlRlcnJhaW5HZW5lcmF0b3JTZXR0aW5ncxJE",
+            "ChFEZXRhaWxzR2VuZXJhdG9ycxgFIAMoCzIpLmZhcHJvLnRudC53b3JsZC5E",
+            "ZXRhaWxzR2VuZXJhdG9yU2V0dGluZ3MqPwoMUGFydGljbGVUeXBlEgsKB1B0",
+            "RGVidWcQABIJCgVQdEFpchABEgsKB1B0V2F0ZXIQAhIKCgZQdERpcnQQAyor",
+            "CglCaW9tZVR5cGUSDAoIQmlvRGVidWcQABIQCgxCaW9HcmFzc2xhbmQQAUIv",
+            "qgIsVW5pRG9ydG11bmQuRmFQcm9TUzE3UDNHMS5NYXBHZW5lcmF0b3IuTW9k",
+            "ZWxiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.ParticleType), typeof(global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.BiomeType), }, new pbr::GeneratedClrTypeInfo[] {
@@ -67,7 +68,7 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model {
             new pbr::GeneratedClrTypeInfo(typeof(global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldBlock), global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldBlock.Parser, new[]{ "ParticleFields" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.ParticleField), global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.ParticleField.Parser, new[]{ "Type", "NumberOfParticles" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.BiomeGeneratorSettings), global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.BiomeGeneratorSettings.Parser, new[]{ "Type", "Seed", "UniformGenerator" }, new[]{ "SpecificSettings" }, new[]{ typeof(global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.BiomeGeneratorSettings.Types.BiomeGeneratorType) }, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.BiomeGeneratorSettings.Types.UniformGeneratorSettings), global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.BiomeGeneratorSettings.Types.UniformGeneratorSettings.Parser, new[]{ "TargetBiomeType" }, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.DensityGeneratorSettings), global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.DensityGeneratorSettings.Parser, new[]{ "Type", "Seed", "FlatWorldGenerator" }, new[]{ "SpecificSettings" }, new[]{ typeof(global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.DensityGeneratorSettings.Types.DensityGeneratorType) }, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.DensityGeneratorSettings.Types.FlatWorldGeneratorSettings), global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.DensityGeneratorSettings.Types.FlatWorldGeneratorSettings.Parser, new[]{ "HeightLevel" }, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.DensityGeneratorSettings), global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.DensityGeneratorSettings.Parser, new[]{ "Type", "Seed", "FlatWorldGenerator" }, new[]{ "SpecificSettings" }, new[]{ typeof(global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.DensityGeneratorSettings.Types.DensityGeneratorType) }, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.DensityGeneratorSettings.Types.FlatWorldGeneratorSettings), global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.DensityGeneratorSettings.Types.FlatWorldGeneratorSettings.Parser, new[]{ "CeilLevel", "FloorLevel" }, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.TerrainGeneratorSettings), global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.TerrainGeneratorSettings.Parser, new[]{ "Type", "Seed" }, null, new[]{ typeof(global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.TerrainGeneratorSettings.Types.TerrainGeneratorType) }, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.DetailsGeneratorSettings), global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.DetailsGeneratorSettings.Parser, new[]{ "Type", "Seed" }, null, new[]{ typeof(global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.DetailsGeneratorSettings.Types.DetailsGeneratorType) }, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldInfo), global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.WorldInfo.Parser, new[]{ "BiomeGenerator", "DensityGenerator", "TerrainGenerator", "DetailsGenerators" }, null, null, null)
@@ -1033,7 +1034,8 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public FlatWorldGeneratorSettings(FlatWorldGeneratorSettings other) : this() {
-          heightLevel_ = other.heightLevel_;
+          ceilLevel_ = other.ceilLevel_;
+          floorLevel_ = other.floorLevel_;
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1041,14 +1043,25 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model {
           return new FlatWorldGeneratorSettings(this);
         }
 
-        /// <summary>Field number for the "HeightLevel" field.</summary>
-        public const int HeightLevelFieldNumber = 1;
-        private int heightLevel_;
+        /// <summary>Field number for the "CeilLevel" field.</summary>
+        public const int CeilLevelFieldNumber = 1;
+        private int ceilLevel_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public int HeightLevel {
-          get { return heightLevel_; }
+        public int CeilLevel {
+          get { return ceilLevel_; }
           set {
-            heightLevel_ = value;
+            ceilLevel_ = value;
+          }
+        }
+
+        /// <summary>Field number for the "FloorLevel" field.</summary>
+        public const int FloorLevelFieldNumber = 2;
+        private int floorLevel_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public int FloorLevel {
+          get { return floorLevel_; }
+          set {
+            floorLevel_ = value;
           }
         }
 
@@ -1065,14 +1078,16 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model {
           if (ReferenceEquals(other, this)) {
             return true;
           }
-          if (HeightLevel != other.HeightLevel) return false;
+          if (CeilLevel != other.CeilLevel) return false;
+          if (FloorLevel != other.FloorLevel) return false;
           return true;
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override int GetHashCode() {
           int hash = 1;
-          if (HeightLevel != 0) hash ^= HeightLevel.GetHashCode();
+          if (CeilLevel != 0) hash ^= CeilLevel.GetHashCode();
+          if (FloorLevel != 0) hash ^= FloorLevel.GetHashCode();
           return hash;
         }
 
@@ -1083,17 +1098,24 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
-          if (HeightLevel != 0) {
+          if (CeilLevel != 0) {
             output.WriteRawTag(8);
-            output.WriteInt32(HeightLevel);
+            output.WriteInt32(CeilLevel);
+          }
+          if (FloorLevel != 0) {
+            output.WriteRawTag(16);
+            output.WriteInt32(FloorLevel);
           }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public int CalculateSize() {
           int size = 0;
-          if (HeightLevel != 0) {
-            size += 1 + pb::CodedOutputStream.ComputeInt32Size(HeightLevel);
+          if (CeilLevel != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeInt32Size(CeilLevel);
+          }
+          if (FloorLevel != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeInt32Size(FloorLevel);
           }
           return size;
         }
@@ -1103,8 +1125,11 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model {
           if (other == null) {
             return;
           }
-          if (other.HeightLevel != 0) {
-            HeightLevel = other.HeightLevel;
+          if (other.CeilLevel != 0) {
+            CeilLevel = other.CeilLevel;
+          }
+          if (other.FloorLevel != 0) {
+            FloorLevel = other.FloorLevel;
           }
         }
 
@@ -1117,7 +1142,11 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model {
                 input.SkipLastField();
                 break;
               case 8: {
-                HeightLevel = input.ReadInt32();
+                CeilLevel = input.ReadInt32();
+                break;
+              }
+              case 16: {
+                FloorLevel = input.ReadInt32();
                 break;
               }
             }

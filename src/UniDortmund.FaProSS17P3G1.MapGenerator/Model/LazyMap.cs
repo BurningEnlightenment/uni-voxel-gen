@@ -52,6 +52,6 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
         }
 
         private static int MapCoord(int coord)
-            => (coord << 1) | (coord >> 31);
+            => LibExtensions.ZigZagEnc(coord);
     }
 }

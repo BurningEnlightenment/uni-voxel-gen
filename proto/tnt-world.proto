@@ -68,7 +68,8 @@ message DensityGeneratorSettings
 
     message FlatWorldGeneratorSettings
     {
-        int32 HeightLevel = 1;
+        int32 CeilLevel = 1;
+        int32 FloorLevel = 2;
     }
 
     DensityGeneratorType Type = 1;
