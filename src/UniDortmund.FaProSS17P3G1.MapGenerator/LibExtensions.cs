@@ -18,7 +18,10 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator
                 {
                     list.Capacity = size;
                 }
-                list.AddRange(Enumerable.Repeat<T>(elem, size - current));
+                for (; current < size; ++current)
+                {
+                    list.Add(elem);
+                }
             }
         }
 
