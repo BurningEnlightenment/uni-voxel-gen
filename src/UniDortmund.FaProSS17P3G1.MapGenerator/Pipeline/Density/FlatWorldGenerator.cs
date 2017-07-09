@@ -12,7 +12,11 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline.Density
     public class FlatWorldGenerator : IDensityGenerator
     {
         private readonly int mWorldCeil;
+        private readonly int mWorldCeilChunk;
+        private readonly int mWorldCeilRel;
         private readonly int mWorldFloor;
+        private readonly int mWorldFloorChunk;
+        private readonly int mWorldFloorRel;
 
         public FlatWorldGenerator(DensityGeneratorSettings settings)
         {
@@ -21,7 +25,11 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline.Density
                 throw new ArgumentException("not the correct settings type");
             }
             mWorldFloor = settings.FlatWorldGenerator.FloorLevel;
+            mWorldFloorChunk = MapZToChunk(mWorldFloor);
+            mWorldFloorRel = MapZToRelative(mWorldFloor);
             mWorldCeil = settings.FlatWorldGenerator.CeilLevel;
+            mWorldCeilChunk = MapZToChunk(mWorldCeil);
+            mWorldCeilRel = MapZToRelative(mWorldCeil);
         }
 
         public INoiseGenerator NoiseGenerator { set { } }
@@ -32,38 +40,29 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline.Density
         public void ApplyTo(WorldMap targetMap, int x, int y)
         {
             var col = targetMap[x, y];
-            if (Math.Abs(mWorldCeil - mWorldFloor) < ChunkDimension)
-            {
-                var chunk = col.Chunk(MapZToChunk(mWorldFloor));
-                FillChunk(chunk, MapZToRelative(mWorldFloor), MapZToRelative(mWorldCeil + 1));
-            }
-            else
-            {
-                var chunk = col.Chunk(MapZToChunk(mWorldFloor));
-                FillChunk(chunk, MapZToRelative(mWorldFloor), ChunkDimension);
 
-                for (var i = mWorldFloor + ChunkDimension;
-                    i <= mWorldCeil - ChunkDimension;
-                    i += ChunkDimension)
-                {
-                    chunk = col.Chunk(MapZToChunk(i));
-                    FillChunk(chunk, 0, ChunkDimension);
-                }
-
-                chunk = col.Chunk(MapZToChunk(mWorldCeil));
-                FillChunk(chunk, 0, MapZToRelative(mWorldCeil + 1));
+            // touch all chunks in between
+            foreach (var _ in col.ChunkRange(mWorldFloorChunk, mWorldCeilChunk))
+            {
             }
+
+            var chunk = col.Chunk(MapZToChunk(mWorldCeil));
+            FillChunkWithAir(chunk, mWorldCeilRel + 1, ChunkDimension - 1);
+
+            chunk = col.Chunk(mWorldFloorChunk);
+            FillChunkWithAir(chunk, 0, mWorldFloorRel);
+
         }
 
-        private static void FillChunk(UnpackedChunk chunk, int min, int max)
+        private static void FillChunkWithAir(UnpackedChunk chunk, int min, int max)
         {
-            for (var x = min; x < max; ++x)
+            for (var z = min; z <= max; ++z)
             {
                 for (var y = 0; y < ChunkDimension; ++y)
                 {
-                    for (var z = 0; z < ChunkDimension; ++z)
+                    for (var x = 0; x < ChunkDimension; ++x)
                     {
-                        chunk[x, y, z] = ParticleType.PtDebug;
+                        chunk.Data[x, y, z] = ParticleType.PtDebug;
                     }
                 }
             }

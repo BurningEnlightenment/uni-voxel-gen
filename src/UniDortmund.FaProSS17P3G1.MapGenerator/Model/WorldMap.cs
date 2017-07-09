@@ -47,7 +47,7 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
         }
 
         /// <summary>
-        /// Create a new World Map based on the given world info.
+        /// Create a new World MapValues based on the given world info.
         /// </summary>
         /// <param name="levelPath"></param>
         /// <param name="worldInfo"></param>

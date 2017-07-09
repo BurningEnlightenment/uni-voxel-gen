@@ -41,13 +41,7 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline.Biome
         public void ApplyTo(WorldMap targetMap, int x, int y)
         {
             var col = targetMap[x, y];
-            for (var i = 0; i < Constants.ChunkDimension; ++i)
-            {
-                for (var j = 0; j < Constants.ChunkDimension; ++j)
-                {
-                    col[i, j] = mBiomeType;
-                }
-            }
+            col.BiomeMap.Fill(() => mBiomeType);
         }
     }
 }
