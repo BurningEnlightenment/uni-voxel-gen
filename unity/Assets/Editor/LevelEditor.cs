@@ -11,6 +11,7 @@ public class LevelEditor : Editor
 {
     private const string FileNameRegexString = "^(?<xC>[0-9A-F]{8})-(?<yC>[0-9A-F]{8}).column$";
     private static Regex FileNameRegex = new Regex(FileNameRegexString, RegexOptions.Compiled);
+    private string basepath = "";
 
     public void openColums(string path)
     {
@@ -45,16 +46,27 @@ public class LevelEditor : Editor
         int origY = y;
         int round = 0;
         bool neg = true;
+        int z;
+        int block = 1;
+        string wBlock, wColumn, zheight, yheight,path;
 
         // Erstelle Ordner X-Y
+        wColumn = origX.toString() + "-" + origY.toString();
+        Directory.CreateDirectory(basepath+"/"+wColumn);
         foreach (WorldBlock block in data.Blocks)
         {
             x = origX;
             y = origY;
-            int z;
             // Erstelle Ordner block nummer
+            wBlock = wColumn +"/"+block.toString();
+            Directory.CreateDirectory(basepath + "/" + wBlock);
+            block++;
             // Erstelle Ordner höhe 0
+            zheight =wBlock+"/"+ z.toString();
+            Directory.CreateDirectory(basepath + "/" + zheight);
             // Erstelle Ordner y = 0
+            yheight = zheight +"/"+ origY.toString();
+            Directory.CreateDirectory(basepath + "/" + yheight);
             if (neg == false)
             {
                 z = (round * 16);
@@ -74,19 +86,32 @@ public class LevelEditor : Editor
                     if(field.Type != ParticleType.PtAir)
                     {
                         // Erstelle Game Object an x,y,z
+                        path = basepath + "/"+ yheight+"/";
+                        Directory.SetCurrentDirectory(path);
+                        Gameobject voxel = new Gameobject(ParticleType.toString()) ;
+                        voxel.transform.localPosition = newVector3(x, y, z);
+
+                        // Prefabs benötigt eventuell anpassen 
                     }
                     if (x == 15)
                     {
                         // Erstelle Ordner y++
                         x = origX-1;
                         y++;
+                        yheight = zheight + "/" + y.toString();
+                        Directory.CreateDirectory(basepath + "/" + yheight);
                     }
                     if (y == 15)
                     {
-                        // Erstelle Ordner z++
-                        // Erstelle Ordner y
                         y = origY;
                         z++;
+                        // Erstelle Ordner z++
+                        zheight = wBlock + "/" + z.toString();
+                        Directory.CreateDirectory(basepath + "/" + zheight);
+                        // Erstelle Ordner y
+                        yheight = zheight + "/" + origY.toString();
+                        Directory.CreateDirectory(basepath + "/" + yheight);
+
                     }
                     x++;
                 }
