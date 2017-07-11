@@ -11,6 +11,12 @@ enum ParticleType
     PtAir = 1;
     PtWater = 2;
     PtDirt = 3;
+/*
+PtGrass
+PtStone
+PtSand
+PtSnow
+*/
 }
 
 message WorldColumn

@@ -9,8 +9,9 @@ using System.IO;
 [CustomEditor(typeof(World))]
 public class LevelEditor : Editor
 {
-    private const string FileNameRegexString = "^(?<xC>[0-9A-F]{8})-(?<yC>[0-9A-F]{8}).column$";
+    private const string FileNameRegexString = "^([0-9A-F]{8})-([0-9A-F]{8}).column$";
     private static Regex FileNameRegex = new Regex(FileNameRegexString, RegexOptions.Compiled);
+    GameObject levelG;
 
     public override void OnInspectorGUI()
     {
@@ -18,26 +19,28 @@ public class LevelEditor : Editor
 
         if (GUILayout.Button("Build"))
         {
-            openColums("");
+            openColums(@"D:\P3G1\src\UniDortmund.FaProSS17P3G1.MapGenerator.Tests\bin\Debug\netcoreapp1.1\tmp\test-level");
         }
-       // if (GUILayout.Button("Delete"))
-       // {
-       // }
+        if (GUILayout.Button("Delete"))
+        {
+            GameObject.DestroyImmediate(levelG);
+        }
     }
     public void openColums(string path)
     {
         System.IO.DirectoryInfo ParentDirectory = new System.IO.DirectoryInfo(path);
         var origX = 0;
         int origY = 0;
-
+        levelG = new GameObject("Level");
         foreach (System.IO.FileInfo f in ParentDirectory.GetFiles())
         {
-            if (f.Name.Contains(".column"))
+            Match match = FileNameRegex.Match(f.Name);
+            if (match.Success)
             {
-
-                Match match = FileNameRegex.Match(f.Name);
-                origX = (int)Convert.ToUInt32(match.Groups["xC"].Value, 16);
-                origY = (int)Convert.ToUInt32(match.Groups["yC"].Value, 16);
+                var xC = match.Groups[1].Value;
+                var yC = match.Groups[2].Value;
+                origX = (int)Convert.ToUInt32(xC, 16);
+                origY = (int)Convert.ToUInt32(yC, 16);
 
                 WorldColumn data;
                 using (var input = File.OpenRead(f.ToString()))
@@ -55,45 +58,36 @@ public class LevelEditor : Editor
     {
         var origX = x;
         int origY = y;
-        int round = 0;
-        bool neg = true;
-        int z = 0;
-        int blockW = 1;
+        int origZ;
+        int blockW = 0;
         string wBlock, wColumn, zheight, yheight;
 
         // Erstelle Ordner X-Y
-        wColumn = origX + "-" + origY;
+        wColumn = "("+origX + ") - (" + origY +")";
         GameObject wColumnG = new GameObject(wColumn);
+        wColumnG.transform.parent = levelG.transform;
+        
         foreach (WorldBlock block in data.Blocks)
         {
             x = origX;
             y = origY;
-
+            origZ = ZigZagDec(blockW) * 16;
+            int z = origZ;
             // Erstelle Ordner block nummer
-            wBlock = blockW +"";
+            wBlock = "B: "+blockW;
             GameObject wBlockG = new GameObject(wBlock);
             wBlockG.transform.parent = wColumnG.transform;
             blockW++;
             // Erstelle Ordner höhe 0
-            zheight = z+"";
+            zheight ="Z: " +z;
             GameObject zheightG = new GameObject(zheight);
             zheightG.transform.parent = wBlockG.transform;
             // Erstelle Ordner y = 0
-            yheight = origY+"";
+            yheight = "Y: "+origY;
             GameObject yheightG = new GameObject(yheight);
             yheightG.transform.parent = zheightG.transform;
 
-            if (neg == false)
-            {
-                z = (round * 16);
-                neg = true;
-            }
-            else
-            {
-                z = -(round * 16);
-                neg = false;
-                round++;
-            }
+            
 
             foreach (ParticleField field in block.ParticleFields)
             {
@@ -102,38 +96,49 @@ public class LevelEditor : Editor
                     if(field.Type != ParticleType.PtAir)
                     {
                         // Erstelle Game Object an x,y,z
-                        GameObject voxel=Instantiate(Resources.Load<GameObject>("Prefabs/"+Enum.GetName(typeof(ParticleType), field.Type)), new Vector3(x, y, z), Quaternion.identity) as GameObject;
+                        GameObject voxel=Instantiate(Resources.Load<GameObject>("Prefabs/"+Enum.GetName(typeof(ParticleType), field.Type)), new Vector3(x, z, y), Quaternion.identity) as GameObject;
                         voxel.transform.parent = yheightG.transform;
                     }
-                    if (x == 15)
+                    if (x == origX+15)
                     {
                         // Erstelle Ordner y++
 
                         x = origX-1;
                         y++;
-                        yheight =""+ y;
+                        yheight ="Y: "+ y;
                         yheightG = new GameObject(yheight);
                         yheightG.transform.parent = zheightG.transform;
                     }
-                    if (y == 15)
+                    if (y == origY+16)
                     {
                         y = origY;
                         z++;
-
-                        // Erstelle Ordner z++
-                        zheight = "" + z;
-                        zheightG = new GameObject(zheight);
-                        zheightG.transform.parent = wBlockG.transform;
-                        // Erstelle Ordner y
-                        yheight = ""+ origY;
-                        yheightG = new GameObject(yheight);
-                        yheightG.transform.parent = zheightG.transform;
-
+                        if (z != origZ+16)
+                        {
+                            // Erstelle Ordner z++
+                            zheight = "Z: " + z;
+                            zheightG = new GameObject(zheight);
+                            zheightG.transform.parent = wBlockG.transform;
+                            // Erstelle Ordner y
+                            yheight = "Y: " + origY;
+                            yheightG = new GameObject(yheight);
+                            yheightG.transform.parent = zheightG.transform;
+                        }
                     }
                     x++;
                 }
 
             }
         }
+    }
+
+    public static int ZigZagEnc(int val)
+    {
+        return (val << 1) ^ (val >> 31);
+    }
+
+    public static int ZigZagDec(int val)
+    {
+        return (int)((uint)val >> 1) ^ -(val & 1);
     }
 }
