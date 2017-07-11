@@ -6,13 +6,24 @@ using System;
 using UniDortmund.FaProSS17P3G1.MapGenerator.Model;
 using System.IO;
 
-[CustomEditor(typeof(LevelEditor))]
+[CustomEditor(typeof(World))]
 public class LevelEditor : Editor
 {
     private const string FileNameRegexString = "^(?<xC>[0-9A-F]{8})-(?<yC>[0-9A-F]{8}).column$";
     private static Regex FileNameRegex = new Regex(FileNameRegexString, RegexOptions.Compiled);
-    private string basepath = "";
 
+    public override void OnInspectorGUI()
+    {
+        DrawDefaultInspector();
+
+        if (GUILayout.Button("Build"))
+        {
+            openColums("");
+        }
+       // if (GUILayout.Button("Delete"))
+       // {
+       // }
+    }
     public void openColums(string path)
     {
         System.IO.DirectoryInfo ParentDirectory = new System.IO.DirectoryInfo(path);
@@ -46,27 +57,32 @@ public class LevelEditor : Editor
         int origY = y;
         int round = 0;
         bool neg = true;
-        int z;
-        int block = 1;
-        string wBlock, wColumn, zheight, yheight,path;
+        int z = 0;
+        int blockW = 1;
+        string wBlock, wColumn, zheight, yheight;
 
         // Erstelle Ordner X-Y
-        wColumn = origX.toString() + "-" + origY.toString();
-        Directory.CreateDirectory(basepath+"/"+wColumn);
+        wColumn = origX + "-" + origY;
+        GameObject wColumnG = new GameObject(wColumn);
         foreach (WorldBlock block in data.Blocks)
         {
             x = origX;
             y = origY;
+
             // Erstelle Ordner block nummer
-            wBlock = wColumn +"/"+block.toString();
-            Directory.CreateDirectory(basepath + "/" + wBlock);
-            block++;
+            wBlock = blockW +"";
+            GameObject wBlockG = new GameObject(wBlock);
+            wBlockG.transform.parent = wColumnG.transform;
+            blockW++;
             // Erstelle Ordner höhe 0
-            zheight =wBlock+"/"+ z.toString();
-            Directory.CreateDirectory(basepath + "/" + zheight);
+            zheight = z+"";
+            GameObject zheightG = new GameObject(zheight);
+            zheightG.transform.parent = wBlockG.transform;
             // Erstelle Ordner y = 0
-            yheight = zheight +"/"+ origY.toString();
-            Directory.CreateDirectory(basepath + "/" + yheight);
+            yheight = origY+"";
+            GameObject yheightG = new GameObject(yheight);
+            yheightG.transform.parent = zheightG.transform;
+
             if (neg == false)
             {
                 z = (round * 16);
@@ -86,31 +102,35 @@ public class LevelEditor : Editor
                     if(field.Type != ParticleType.PtAir)
                     {
                         // Erstelle Game Object an x,y,z
-                        path = basepath + "/"+ yheight+"/";
-                        Directory.SetCurrentDirectory(path);
-                        Gameobject voxel = new Gameobject(ParticleType.toString()) ;
-                        voxel.transform.localPosition = newVector3(x, y, z);
 
-                        // Prefabs benötigt eventuell anpassen 
+                        GameObject voxel = new GameObject(Enum.GetName(typeof(ParticleType), field.Type)) ;
+                        voxel.transform.localPosition = new Vector3(x, y, z);
+                        voxel.transform.parent = yheightG.transform;
+
                     }
                     if (x == 15)
                     {
                         // Erstelle Ordner y++
+
                         x = origX-1;
                         y++;
-                        yheight = zheight + "/" + y.toString();
-                        Directory.CreateDirectory(basepath + "/" + yheight);
+                        yheight =""+ y;
+                        yheightG = new GameObject(yheight);
+                        yheightG.transform.parent = zheightG.transform;
                     }
                     if (y == 15)
                     {
                         y = origY;
                         z++;
+
                         // Erstelle Ordner z++
-                        zheight = wBlock + "/" + z.toString();
-                        Directory.CreateDirectory(basepath + "/" + zheight);
+                        zheight = "" + z;
+                        zheightG = new GameObject(zheight);
+                        zheightG.transform.parent = wBlockG.transform;
                         // Erstelle Ordner y
-                        yheight = zheight + "/" + origY.toString();
-                        Directory.CreateDirectory(basepath + "/" + yheight);
+                        yheight = ""+ origY;
+                        yheightG = new GameObject(yheight);
+                        yheightG.transform.parent = zheightG.transform;
 
                     }
                     x++;
