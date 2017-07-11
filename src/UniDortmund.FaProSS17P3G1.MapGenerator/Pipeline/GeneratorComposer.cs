@@ -16,7 +16,8 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline
 
         private static readonly ImmutableDictionary<BiomeGeneratorType, GeneratorFactory<IBiomeGenerator, BiomeGeneratorSettings>> AvBiomeGenerators
             = ImmutableDictionary<BiomeGeneratorType, GeneratorFactory<IBiomeGenerator, BiomeGeneratorSettings>>.Empty
-                .Add(BiomeGeneratorType.Uniform, Biome.UniformBiomeGenerator.Create);
+                .Add(BiomeGeneratorType.Uniform, Biome.UniformBiomeGenerator.Create)
+                .Add(BiomeGeneratorType.TwoStage, Biome.TwoStageBiomeGenerator.Create);
 
         private static readonly ImmutableDictionary<DensityGeneratorType, GeneratorFactory<IDensityGenerator, DensityGeneratorSettings>> AvDensityGenerators
             = ImmutableDictionary<DensityGeneratorType, GeneratorFactory<IDensityGenerator, DensityGeneratorSettings>>.Empty

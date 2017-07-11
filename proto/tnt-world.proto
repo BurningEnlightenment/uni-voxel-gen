@@ -43,6 +43,7 @@ message BiomeGeneratorSettings
     enum BiomeGeneratorType
     {
         Uniform = 0;
+        TwoStage = 1;
     }
 
     message UniformGeneratorSettings
