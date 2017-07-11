@@ -1,9 +1,13 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using static UniDortmund.FaProSS17P3G1.MapGenerator.LibExtensions;
 
 namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
 {
-    public class LazyMap<T> where T: class, new()
+    public class LazyMap<T> : IEnumerable<(int X, int Y, T Value)>
+        where T: class, new()
     {
         private readonly List<List<T>> mData
             = new List<List<T>>();
@@ -52,6 +56,27 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
         }
 
         private static int MapCoord(int coord)
-            => LibExtensions.ZigZagEnc(coord);
+            => ZigZagEnc(coord);
+
+        public IEnumerator<(int X, int Y, T Value)> GetEnumerator()
+        {
+            for (var i = 0; i < mData.Count; ++i)
+            {
+                var row = mData[i];
+                if (row == null)
+                {
+                    continue;
+                }
+
+                for (var j = 0; j < row.Count; j++)
+                {
+                    var value = row[j];
+                    yield return (ZigZagDec(j), ZigZagDec(i), value);
+                }
+            }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+            => GetEnumerator();
     }
 }

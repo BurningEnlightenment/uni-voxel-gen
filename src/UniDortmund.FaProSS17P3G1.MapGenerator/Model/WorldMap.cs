@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text.RegularExpressions;
 using Google.Protobuf;
 using NotEnoughTime.Utils.Random;
@@ -85,11 +86,32 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
             };
 
             Directory.CreateDirectory(levelPath);
+            WriteWorldInfoFile(levelPath, worldInfo);
+            return new WorldMap(levelPath, worldInfo);
+        }
+
+        public void Save()
+        {
+            WriteWorldInfoFile();
+            foreach (var column in mData)
+            {
+                var packedColumn = column.Value.Pack();
+                var fileName = $"{column.X:X8}-{column.Y:X8}.column";
+                using (var columnFile = File.Create(Path.Combine(LevelPath, fileName)))
+                {
+                    packedColumn.WriteTo(columnFile);
+                }
+            }
+        }
+
+        private void WriteWorldInfoFile() => WriteWorldInfoFile(LevelPath, WorldInfo);
+
+        private static void WriteWorldInfoFile(string levelPath, WorldInfo worldInfo)
+        {
             using (var level = File.Create(Path.Combine(levelPath, WorldInfoFile)))
             {
                 worldInfo.WriteTo(level);
             }
-            return new WorldMap(levelPath, worldInfo);
         }
 
         private static WorldInfo ReadWorldInfoFile(string levelPath)
