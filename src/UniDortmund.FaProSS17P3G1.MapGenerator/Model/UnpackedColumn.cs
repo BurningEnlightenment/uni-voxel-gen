@@ -6,6 +6,7 @@ using Google.Protobuf;
 using static UniDortmund.FaProSS17P3G1.MapGenerator.Constants;
 using static UniDortmund.FaProSS17P3G1.MapGenerator.LibExtensions;
 
+
 namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
 {
     public class UnpackedChunk
@@ -15,6 +16,7 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
 
         public UnpackedChunk()
         {
+<<<<<<< Updated upstream
         }
         public UnpackedChunk(WorldBlock block)
         {
@@ -62,6 +64,10 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
             }
 
             return packed;
+=======
+            get => mparticles[x, y, z];
+            set => mparticles[x, y, z] = value;
+>>>>>>> Stashed changes
         }
     }
 
@@ -71,6 +77,7 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
 
         public UnpackedColumn()
         {
+<<<<<<< Updated upstream
             mChunks = new List<UnpackedChunk>(8);
         }
 
@@ -87,6 +94,10 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
                 }
                 return new UnpackedChunk(block);
             }));
+=======
+            get => mbiomeTypes[x, y];
+            set => mbiomeTypes[x, y] = value;
+>>>>>>> Stashed changes
         }
 
         public IArray2D<BiomeType> BiomeMap { get; }
@@ -152,8 +163,42 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
 
         public ParticleType this[int x, int y, int z]
         {
-            get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
+            get
+            {
+                var chunkID = GetChunkFromHeight(z);
+                var localZ = ConvertGlobalToLocalHeight(z);
+                return mChunks[chunkID][x, y, localZ];
+            }
+            set
+            {
+                var chunkID = GetChunkFromHeight(z);
+                var localZ = ConvertGlobalToLocalHeight(z);
+                mChunks[chunkID][x, y, localZ] = value;
+
+            }
+        }
+
+        private int ConvertGlobalToLocalHeight(int globalHeight)
+        {
+            return mod(globalHeight, Constants.chunkHeight);
+        }
+
+        private int GetChunkFromHeight(int globalHeight)
+        {
+            int localHeight;
+            if (globalHeight < 0)
+            {
+                localHeight = (1 - (globalHeight / (Constants.chunkHeight / 2)));
+            }
+            else
+            {
+                localHeight = (globalHeight / (Constants.chunkHeight / 2));
+            }
+            return localHeight;
+        }
+        private int mod(int x, int m)
+        {
+            return (x % m + m) % m;
         }
 
         public static int MapZToChunkNum(int z) => z / 16;
