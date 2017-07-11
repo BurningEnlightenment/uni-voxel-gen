@@ -102,11 +102,8 @@ public class LevelEditor : Editor
                     if(field.Type != ParticleType.PtAir)
                     {
                         // Erstelle Game Object an x,y,z
-
-                        GameObject voxel = new GameObject(Enum.GetName(typeof(ParticleType), field.Type)) ;
-                        voxel.transform.localPosition = new Vector3(x, y, z);
+                        GameObject voxel=Instantiate(Resources.Load<GameObject>("Prefabs/"+Enum.GetName(typeof(ParticleType), field.Type)), new Vector3(x, y, z), Quaternion.identity) as GameObject;
                         voxel.transform.parent = yheightG.transform;
-
                     }
                     if (x == 15)
                     {
