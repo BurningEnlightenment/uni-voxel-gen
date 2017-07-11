@@ -5,7 +5,7 @@ using NotEnoughTime.Utils;
 using UniDortmund.FaProSS17P3G1.MapGenerator.Algorithm;
 using UniDortmund.FaProSS17P3G1.MapGenerator.Model;
 using static UniDortmund.FaProSS17P3G1.MapGenerator.Constants;
-using static UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline.GeneratorUtils;
+using static UniDortmund.FaProSS17P3G1.MapGenerator.Model.UnpackedColumn;
 
 namespace UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline.Density
 {
@@ -25,10 +25,10 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline.Density
                 throw new ArgumentException("not the correct settings type");
             }
             mWorldFloor = settings.FlatWorldGenerator.FloorLevel;
-            mWorldFloorChunk = MapZToChunk(mWorldFloor);
+            mWorldFloorChunk = MapZToChunkNum(mWorldFloor);
             mWorldFloorRel = MapZToRelative(mWorldFloor);
             mWorldCeil = settings.FlatWorldGenerator.CeilLevel;
-            mWorldCeilChunk = MapZToChunk(mWorldCeil);
+            mWorldCeilChunk = MapZToChunkNum(mWorldCeil);
             mWorldCeilRel = MapZToRelative(mWorldCeil);
         }
 
@@ -46,7 +46,7 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline.Density
             {
             }
 
-            var chunk = col.Chunk(MapZToChunk(mWorldCeil));
+            var chunk = col.Chunk(mWorldCeilChunk);
             FillChunkWithAir(chunk, mWorldCeilRel + 1, ChunkDimension - 1);
 
             chunk = col.Chunk(mWorldFloorChunk);
@@ -62,7 +62,7 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline.Density
                 {
                     for (var x = 0; x < ChunkDimension; ++x)
                     {
-                        chunk.Data[x, y, z] = ParticleType.PtDebug;
+                        chunk.Data[x, y, z] = ParticleType.PtAir;
                     }
                 }
             }

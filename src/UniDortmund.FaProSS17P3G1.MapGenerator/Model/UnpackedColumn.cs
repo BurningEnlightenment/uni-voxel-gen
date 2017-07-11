@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using System.Runtime.CompilerServices;
+using Google.Protobuf;
 using static UniDortmund.FaProSS17P3G1.MapGenerator.Constants;
 using static UniDortmund.FaProSS17P3G1.MapGenerator.LibExtensions;
 
@@ -11,18 +12,73 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
     {
         public readonly IArray3D<ParticleType> Data
             = new FastArray3D<ParticleType>(ChunkDimension);
+
+        public UnpackedChunk()
+        {
+        }
+        public UnpackedChunk(WorldBlock block)
+        {
+            var ctr = 0;
+            foreach (var particleField in block.ParticleFields)
+            {
+                for (var bound = ctr + particleField.NumberOfParticles; ctr < bound; ++ctr)
+                {
+                    Data[ctr] = particleField.Type;
+                }
+            }
+        }
+        public UnpackedChunk(ParticleType initial)
+        {
+            Data.Fill(() => initial);
+        }
+
+        public WorldBlock Pack()
+        {
+            var packed = new WorldBlock();
+
+            var count = 0u;
+            var lastParticle = Data[0];
+            foreach (var particle in Data.Select(data => data.Value))
+            {
+                if (particle != lastParticle)
+                {
+                    packed.ParticleFields.Add(new ParticleField
+                    {
+                        Type = lastParticle,
+                        NumberOfParticles = count,
+                    });
+                    count = 0;
+                    lastParticle = particle;
+                }
+                ++count;
+            }
+
+            return packed;
+        }
     }
 
     public class UnpackedColumn
     {
-        private List<UnpackedChunk> mChunks;
+        private readonly List<UnpackedChunk> mChunks;
 
         public UnpackedColumn()
         {
+            mChunks = new List<UnpackedChunk>(8);
         }
 
         public UnpackedColumn(WorldColumn data)
         {
+            mChunks = new List<UnpackedChunk>(data.Blocks.Count);
+            mChunks.AddRange(data.Blocks.Select(block =>
+            {
+                var blockData = block.ParticleFields;
+                if (blockData.Count == 0
+                    || blockData.Count == 1 && blockData[0].Type == ParticleType.PtAir)
+                {
+                    return null;
+                }
+                return new UnpackedChunk(block);
+            }));
         }
 
         public IArray2D<BiomeType> BiomeMap { get; }
@@ -42,6 +98,8 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
             }
             return chunk;
         }
+
+        public UnpackedChunk ChunkByZ(int z) => Chunk(MapZToChunkNum(z));
 
         /// <summary>
         /// Enumerates the chunks from the [begin, end] interval
@@ -78,16 +136,20 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
             }
         }
 
-        public BiomeType this[int x, int y]
+        public WorldColumn Pack() => new WorldColumn
         {
-            get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
-        }
+            Blocks = {mChunks.Select(block => block?.Pack() ?? GeneratorUtils.AirBlock )}
+        };
 
         public ParticleType this[int x, int y, int z]
         {
             get => throw new NotImplementedException();
             set => throw new NotImplementedException();
         }
+
+        public static int MapZToChunkNum(int z) => z / 16;
+
+        public static int MapZToRelative(int z)
+            => GeneratorUtils.Mod(z, ChunkDimension);
     }
 }

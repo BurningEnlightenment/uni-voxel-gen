@@ -36,11 +36,12 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
                 var x = ParseCoord(match.Groups[1].Value);
                 var y = ParseCoord(match.Groups[2].Value);
 
+                WorldColumn packedColumn;
                 using (var stream = columnFileInfo.OpenRead())
                 {
-                    var columnData = WorldColumn.Parser.ParseFrom(stream);
-                    mData[x, y] = new UnpackedColumn(columnData);
+                    packedColumn = WorldColumn.Parser.ParseFrom(stream);
                 }
+                mData[x, y] = new UnpackedColumn(packedColumn);
             }
 
             int ParseCoord(string val) => (int) Convert.ToUInt32(val, 16);
