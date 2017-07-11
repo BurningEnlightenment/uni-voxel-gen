@@ -92,6 +92,7 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
 
         public void Save()
         {
+            Directory.CreateDirectory(LevelPath);
             WriteWorldInfoFile();
             foreach (var column in mData)
             {
@@ -101,6 +102,30 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
                 {
                     packedColumn.WriteTo(columnFile);
                 }
+            }
+        }
+
+        public void SaveDebug()
+        {
+            Directory.CreateDirectory(LevelPath);
+            WriteDebug(Path.Combine(LevelPath, WorldInfoFile + ".json"), WorldInfo);
+
+            foreach (var column in mData)
+            {
+                var packedColumn = column.Value.Pack();
+                var fileName = $"{column.X:X8}-{column.Y:X8}.column.json";
+
+                WriteDebug(Path.Combine(LevelPath, fileName), packedColumn);
+            }
+        }
+
+        private static readonly JsonFormatter gJsonFormatter
+            = new JsonFormatter(new JsonFormatter.Settings(false));
+        private static void WriteDebug(string filePath, IMessage data)
+        {
+            using (var file = File.CreateText(filePath))
+            {
+                file.Write(gJsonFormatter.Format(data));
             }
         }
 

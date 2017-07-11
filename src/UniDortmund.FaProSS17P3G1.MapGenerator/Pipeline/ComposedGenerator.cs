@@ -44,12 +44,12 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline
             if (sizeX < 0)
             {
                 x += sizeX;
-                sizeX *= -1;
+                sizeX = -sizeX;
             }
             if (sizeY < 0)
             {
                 y += sizeY;
-                sizeY *= -1;
+                sizeY = -sizeY;
             }
             var targetX = x + sizeX;
             var targetY = y + sizeY;
