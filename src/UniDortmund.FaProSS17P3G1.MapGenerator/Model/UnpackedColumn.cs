@@ -52,6 +52,14 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
                 }
                 ++count;
             }
+            if (count > 0)
+            {
+                packed.ParticleFields.Add(new ParticleField
+                {
+                    Type = lastParticle,
+                    NumberOfParticles = count,
+                });
+            }
 
             return packed;
         }
@@ -83,6 +91,9 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
 
         public IArray2D<BiomeType> BiomeMap { get; }
             = new FastArray2D<BiomeType>(ChunkDimension);
+
+        public int FloorChunkIdx => CeilChunkIdx - mChunks.Count + 1;
+        public int CeilChunkIdx => (mChunks.Count - 1) / 2;
 
         public UnpackedChunk Chunk(int coord)
         {
@@ -124,9 +135,7 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
         
         public IEnumerable<(int Coord, UnpackedChunk Chunk)> UsedChunks()
         {
-            var count = mChunks.Count;
-            var halfCount = (count-1) / 2;
-            for (var i = halfCount - count + 1; i <= halfCount; ++i)
+            for (var i = FloorChunkIdx; i <= CeilChunkIdx; ++i)
             {
                 var chunk = mChunks[ZigZagEnc(i)];
                 if (chunk != null)
