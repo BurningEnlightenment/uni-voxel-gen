@@ -21,7 +21,7 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline.Biome
             mBiomeType = settings.UniformGenerator.TargetBiomeType;
         }
 
-        public INoiseGenerator NoiseGenerator { set { } }
+        public Func<ulong, INoiseGenerator> NoiseGeneratorFactory { set { } }
 
         public BiomeGeneratorSettings Settings
         {

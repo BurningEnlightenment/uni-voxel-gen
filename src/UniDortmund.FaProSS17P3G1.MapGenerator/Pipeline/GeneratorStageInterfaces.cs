@@ -9,7 +9,7 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline
 {
     public interface INoisyGenerator
     {
-        INoiseGenerator NoiseGenerator { set; }
+        Func<ulong, INoiseGenerator> NoiseGeneratorFactory { set; }
 
         void ApplyTo(WorldMap targetMap, int x, int y);
     }

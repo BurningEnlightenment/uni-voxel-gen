@@ -7,7 +7,7 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline.Details
 {
     public class StubDetailsGenerator : IDetailsGenerator
     {
-        public INoiseGenerator NoiseGenerator { set { } }
+        public Func<ulong, INoiseGenerator> NoiseGeneratorFactory { set { } }
 
         public static StubDetailsGenerator Create(DetailsGeneratorSettings _) => new StubDetailsGenerator();
 

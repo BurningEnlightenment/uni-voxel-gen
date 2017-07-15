@@ -16,7 +16,7 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline.Terrain
                 .Add(BiomeType.BioDebug, ParticleType.PtDebug)
                 .Add(BiomeType.BioGrassland, ParticleType.PtDirt);
 
-        public INoiseGenerator NoiseGenerator { get; set; }
+        public Func<ulong, INoiseGenerator> NoiseGeneratorFactory { set { } }
 
         public static MainBlockOnlyTerrainGenerator Create(TerrainGeneratorSettings _) => new MainBlockOnlyTerrainGenerator();
 

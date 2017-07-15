@@ -6,7 +6,7 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline.Biome
 {
     public class TwoStageBiomeGenerator : IBiomeGenerator
     {
-        public INoiseGenerator NoiseGenerator { private get; set; }
+        public Func<ulong, INoiseGenerator> NoiseGeneratorFactory { private get; set; }
 
         public void ApplyTo(WorldMap targetMap, int x, int y)
         {

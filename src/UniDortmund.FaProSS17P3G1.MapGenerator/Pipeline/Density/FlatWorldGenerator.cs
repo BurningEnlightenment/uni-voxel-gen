@@ -32,7 +32,7 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline.Density
             mWorldCeilRel = MapZToRelative(mWorldCeil);
         }
 
-        public INoiseGenerator NoiseGenerator { set { } }
+        public Func<ulong, INoiseGenerator> NoiseGeneratorFactory { set { } }
 
         public static FlatWorldGenerator Create(DensityGeneratorSettings settings)
             => new FlatWorldGenerator(settings);
