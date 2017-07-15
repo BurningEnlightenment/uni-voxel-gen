@@ -58,9 +58,11 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model {
             "YXRvclNldHRpbmdzEkQKEURldGFpbHNHZW5lcmF0b3JzGAUgAygLMikuZmFw",
             "cm8udG50LndvcmxkLkRldGFpbHNHZW5lcmF0b3JTZXR0aW5ncyo/CgxQYXJ0",
             "aWNsZVR5cGUSCwoHUHREZWJ1ZxAAEgkKBVB0QWlyEAESCwoHUHRXYXRlchAC",
-            "EgoKBlB0RGlydBADKisKCUJpb21lVHlwZRIMCghCaW9EZWJ1ZxAAEhAKDEJp",
-            "b0dyYXNzbGFuZBABQi+qAixVbmlEb3J0bXVuZC5GYVByb1NTMTdQM0cxLk1h",
-            "cEdlbmVyYXRvci5Nb2RlbGIGcHJvdG8z"));
+            "EgoKBlB0RGlydBADKngKCUJpb21lVHlwZRIMCghCaW9EZWJ1ZxAAEgwKCEJp",
+            "b09jZWFuEAESEAoMQmlvR3Jhc3NsYW5kEAISDQoJQmlvRm9yZXN0EAMSEAoM",
+            "QmlvSGlnaGxhbmRzEAQSDQoJQmlvVHVuZHJhEAoSDQoJQmlvRGVzZXJ0EBRC",
+            "L6oCLFVuaURvcnRtdW5kLkZhUHJvU1MxN1AzRzEuTWFwR2VuZXJhdG9yLk1v",
+            "ZGVsYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.ParticleType), typeof(global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.BiomeType), }, new pbr::GeneratedClrTypeInfo[] {
@@ -86,6 +88,13 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model {
     [pbr::OriginalName("PtDebug")] PtDebug = 0,
     [pbr::OriginalName("PtAir")] PtAir = 1,
     [pbr::OriginalName("PtWater")] PtWater = 2,
+    /// <summary>
+    ///
+    ///PtGrass
+    ///PtStone
+    ///PtSand
+    ///PtSnow
+    /// </summary>
     [pbr::OriginalName("PtDirt")] PtDirt = 3,
   }
 
@@ -95,7 +104,12 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model {
   /// </summary>
   public enum BiomeType {
     [pbr::OriginalName("BioDebug")] BioDebug = 0,
-    [pbr::OriginalName("BioGrassland")] BioGrassland = 1,
+    [pbr::OriginalName("BioOcean")] BioOcean = 1,
+    [pbr::OriginalName("BioGrassland")] BioGrassland = 2,
+    [pbr::OriginalName("BioForest")] BioForest = 3,
+    [pbr::OriginalName("BioHighlands")] BioHighlands = 4,
+    [pbr::OriginalName("BioTundra")] BioTundra = 10,
+    [pbr::OriginalName("BioDesert")] BioDesert = 20,
   }
 
   #endregion
