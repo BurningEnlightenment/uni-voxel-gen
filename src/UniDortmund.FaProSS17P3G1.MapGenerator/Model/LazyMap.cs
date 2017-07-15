@@ -12,6 +12,13 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
         private readonly List<List<T>> mData
             = new List<List<T>>();
 
+        public int OriginX { get; private set; }
+        public int OriginY { get; private set; }
+        public int SizeX { get; private set; }
+        public int SizeY { get; private set; }
+        public int MaxX => OriginX + SizeX - 1;
+        public int MaxY => OriginY + SizeY - 1;
+
         public T this[int x, int y]
         {
             get
@@ -35,6 +42,7 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
 
         private List<T> SafeRowAccess(ref int x, ref int y)
         {
+            UpdateDimensions(x, y);
             x = MapCoord(x);
             y = MapCoord(y);
 
@@ -53,6 +61,35 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
                 row.Resize(y + 1);
             }
             return row;
+        }
+
+        private void UpdateDimensions(int x, int y)
+        {
+            var maxX = MaxX;
+            if (x < OriginX)
+            {
+                var diff = OriginX - x;
+                OriginX = x;
+                SizeX += diff;
+            }
+            else if (x > maxX)
+            {
+                var diff = x - maxX;
+                SizeX += diff;
+            }
+
+            var maxY = MaxY;
+            if (y < OriginY)
+            {
+                var diff = OriginY - y;
+                OriginY = y;
+                SizeY += diff;
+            }
+            else if (y > maxY)
+            {
+                var diff = y - maxY;
+                SizeY += diff;
+            }
         }
 
         private static int MapCoord(int coord)

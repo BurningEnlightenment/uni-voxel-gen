@@ -1,5 +1,6 @@
 ﻿using UniDortmund.FaProSS17P3G1.MapGenerator.Model;
 using UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline;
+using UniDortmund.FaProSS17P3G1.MapGenerator.Utils;
 using Xunit;
 
 namespace UniDortmund.FaProSS17P3G1.MapGenerator.Tests
@@ -40,6 +41,7 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Tests
             generator.Generate(-2, -2, 5, 5);
             map.Save();
             map.SaveDebug();
+            map.PrintBiomeMap();
         }
     }
 }
