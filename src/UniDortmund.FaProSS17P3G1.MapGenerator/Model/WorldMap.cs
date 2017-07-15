@@ -15,7 +15,7 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
         private static readonly Regex ColumnFileNameRegex = new Regex(ColumnFileNameRegexString, RegexOptions.Compiled);
         private const string WorldInfoFile = "level.dat";
 
-        private readonly LazyMap<UnpackedColumn> mData
+        public readonly LazyMap<UnpackedColumn> MapData
             = new LazyMap<UnpackedColumn>();
 
         /// <summary>
@@ -42,7 +42,7 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
                 {
                     packedColumn = WorldColumn.Parser.ParseFrom(stream);
                 }
-                mData[x, y] = new UnpackedColumn(packedColumn);
+                MapData[x, y] = new UnpackedColumn(packedColumn);
             }
 
             int ParseCoord(string val) => (int) Convert.ToUInt32(val, 16);
@@ -59,7 +59,7 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
             WorldInfo = worldInfo;
         }
 
-        public UnpackedColumn this[int x, int y] => mData[x, y];
+        public UnpackedColumn this[int x, int y] => MapData[x, y];
 
         public string LevelPath { get; }
 
@@ -94,7 +94,7 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
         {
             Directory.CreateDirectory(LevelPath);
             WriteWorldInfoFile();
-            foreach (var column in mData)
+            foreach (var column in MapData)
             {
                 var packedColumn = column.Value.Pack();
                 var fileName = $"{column.X:X8}-{column.Y:X8}.column";
@@ -110,7 +110,7 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
             Directory.CreateDirectory(LevelPath);
             WriteDebug(Path.Combine(LevelPath, WorldInfoFile + ".json"), WorldInfo);
 
-            foreach (var column in mData)
+            foreach (var column in MapData)
             {
                 var packedColumn = column.Value.Pack();
                 var fileName = $"{column.X:X8}-{column.Y:X8}.column.json";
