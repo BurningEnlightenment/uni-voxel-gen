@@ -29,6 +29,12 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline
             mDetailsGenerators = (mapParams.DetailsGenerators ?? Enumerable.Empty<DetailsGeneratorSettings>())
                 .Select(GeneratorComposer.DeriveDetailsGenerator)
                 .ToImmutableArray();
+
+            foreach (var generator in GeneratorSequence)
+            {
+                generator.NoiseGeneratorFactory =
+                    seed => new ScaledNoiseGenerator(new SimplexNoiseGenerator(seed), 1f / Constants.ChunkDimension);
+            }
         }
 
         public void Generate(int x, int y, int sizeX, int sizeY)
