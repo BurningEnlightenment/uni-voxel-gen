@@ -1,0 +1,103 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v1.1",
+    "signature": "34c5b09f7b97a25bc1610ca75922f994faa33835"
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v1.1": {
+      "unidortmund.fapross17p3g1.mapgenerator/1.0.0": {
+        "dependencies": {
+          "CommandLineParser": "2.1.1-beta",
+          "Google.Protobuf": "3.3.0",
+          "NotEnoughTime.Utils": "0.0.1",
+          "NotEnoughTime.Utils.Random": "0.0.1",
+          "System.Collections.Immutable": "1.3.1",
+          "System.ValueTuple": "4.3.1"
+        },
+        "runtime": {
+          "UniDortmund.FaProSS17P3G1.MapGenerator.dll": {}
+        }
+      },
+      "commandlineparser/2.1.1-beta": {
+        "runtime": {
+          "lib/netstandard1.5/CommandLine.dll": {}
+        }
+      },
+      "google.protobuf/3.3.0": {
+        "runtime": {
+          "lib/netstandard1.0/Google.Protobuf.dll": {}
+        }
+      },
+      "notenoughtime.utils/0.0.1": {
+        "runtime": {
+          "lib/netstandard1.0/NotEnoughTime.Utils.dll": {}
+        }
+      },
+      "notenoughtime.utils.random/0.0.1": {
+        "runtime": {
+          "lib/netstandard1.3/NotEnoughTime.Utils.Random.dll": {}
+        }
+      },
+      "system.collections.immutable/1.3.1": {
+        "runtime": {
+          "lib/netstandard1.0/System.Collections.Immutable.dll": {}
+        }
+      },
+      "system.valuetuple/4.3.1": {
+        "runtime": {
+          "lib/netstandard1.0/System.ValueTuple.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "unidortmund.fapross17p3g1.mapgenerator/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "commandlineparser/2.1.1-beta": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TmWNdtqLmtqLbwr0c9l1nEjjk39GB7wevl+1rxN907kjmdUUu5s470bWJFPEckfjYTnZ216xziW5fMXP35KVXg==",
+      "path": "commandlineparser/2.1.1-beta",
+      "hashPath": "commandlineparser.2.1.1-beta.nupkg.sha512"
+    },
+    "google.protobuf/3.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-W0TsIYM2ED9dc/FgdbdtP68vUP1JdbwaFscG3DeVtJNlfm8A/ozjAT0H3dWIk0jJd9Zcx6B7XZ1LYERF8PqqJA==",
+      "path": "google.protobuf/3.3.0",
+      "hashPath": "google.protobuf.3.3.0.nupkg.sha512"
+    },
+    "notenoughtime.utils/0.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-n9vXODIvlO4dDTzSjNouDZ5GnbaREzpByyp6Rd1HowawZu0PDEG1x8OGIUQs6uBpXeyVGOqBkqemZbG8M4Dobw==",
+      "path": "notenoughtime.utils/0.0.1",
+      "hashPath": "notenoughtime.utils.0.0.1.nupkg.sha512"
+    },
+    "notenoughtime.utils.random/0.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+GNltsXT10ztrrH8fshBKQDz0KC3JSLmSMROetS944Y4IheGIhOCkVE180YUOq5R1PQecTP4MmTHekjru4GeQA==",
+      "path": "notenoughtime.utils.random/0.0.1",
+      "hashPath": "notenoughtime.utils.random.0.0.1.nupkg.sha512"
+    },
+    "system.collections.immutable/1.3.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-n+AGX7zmiZumW9aggOkXaHzUeAS3EfeTErnkKCusyONUozbTv+kMb8VE36m+ldV6kF9g57G2c641KCdgH9E0pg==",
+      "path": "system.collections.immutable/1.3.1",
+      "hashPath": "system.collections.immutable.1.3.1.nupkg.sha512"
+    },
+    "system.valuetuple/4.3.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xzDmg26Wb2x2rFDjwziaMYQJqxhrK+b4OUC008o7CnZhUMb2p5XfwgOgAQ/WlKhqxMUSDWRUm5/lNTKdh27pJA==",
+      "path": "system.valuetuple/4.3.1",
+      "hashPath": "system.valuetuple.4.3.1.nupkg.sha512"
+    }
+  }
+}
