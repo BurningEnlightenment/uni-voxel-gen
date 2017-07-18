@@ -41,7 +41,12 @@ message ParticleField
 enum BiomeType
 {
     BioDebug = 0;
-    BioGrassland = 1;
+    BioOcean = 1;
+    BioGrassland = 2;
+    BioForest = 3;
+    BioHighlands = 4;
+    BioTundra = 10;
+    BioDesert = 20;
 }
 
 message BiomeGeneratorSettings
