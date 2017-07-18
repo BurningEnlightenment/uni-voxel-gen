@@ -11,6 +11,11 @@ enum ParticleType
     PtAir = 1;
     PtWater = 2;
     PtDirt = 3;
+	
+	//details
+	PtFlower = 30;
+	PtDryBush = 31;
+	Pt
 /*
 PtGrass
 PtStone

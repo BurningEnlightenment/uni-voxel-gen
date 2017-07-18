@@ -56,13 +56,19 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model {
             "bnQud29ybGQuRGVuc2l0eUdlbmVyYXRvclNldHRpbmdzEkMKEFRlcnJhaW5H",
             "ZW5lcmF0b3IYBCABKAsyKS5mYXByby50bnQud29ybGQuVGVycmFpbkdlbmVy",
             "YXRvclNldHRpbmdzEkQKEURldGFpbHNHZW5lcmF0b3JzGAUgAygLMikuZmFw",
-            "cm8udG50LndvcmxkLkRldGFpbHNHZW5lcmF0b3JTZXR0aW5ncyo/CgxQYXJ0",
+            "cm8udG50LndvcmxkLkRldGFpbHNHZW5lcmF0b3JTZXR0aW5ncypNCgxQYXJ0",
             "aWNsZVR5cGUSCwoHUHREZWJ1ZxAAEgkKBVB0QWlyEAESCwoHUHRXYXRlchAC",
+<<<<<<< Updated upstream
             "EgoKBlB0RGlydBADKngKCUJpb21lVHlwZRIMCghCaW9EZWJ1ZxAAEgwKCEJp",
             "b09jZWFuEAESEAoMQmlvR3Jhc3NsYW5kEAISDQoJQmlvRm9yZXN0EAMSEAoM",
             "QmlvSGlnaGxhbmRzEAQSDQoJQmlvVHVuZHJhEAoSDQoJQmlvRGVzZXJ0EBRC",
             "L6oCLFVuaURvcnRtdW5kLkZhUHJvU1MxN1AzRzEuTWFwR2VuZXJhdG9yLk1v",
             "ZGVsYgZwcm90bzM="));
+=======
+            "EgoKBlB0RGlydBADEgwKCFB0Rmxvd2VyEB4qKwoJQmlvbWVUeXBlEgwKCEJp",
+            "b0RlYnVnEAASEAoMQmlvR3Jhc3NsYW5kEAFCL6oCLFVuaURvcnRtdW5kLkZh",
+            "UHJvU1MxN1AzRzEuTWFwR2VuZXJhdG9yLk1vZGVsYgZwcm90bzM="));
+>>>>>>> Stashed changes
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.ParticleType), typeof(global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.BiomeType), }, new pbr::GeneratedClrTypeInfo[] {
@@ -96,6 +102,10 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model {
     ///PtSnow
     /// </summary>
     [pbr::OriginalName("PtDirt")] PtDirt = 3,
+    /// <summary>
+    ///details
+    /// </summary>
+    [pbr::OriginalName("PtFlower")] PtFlower = 30,
   }
 
   /// <summary>

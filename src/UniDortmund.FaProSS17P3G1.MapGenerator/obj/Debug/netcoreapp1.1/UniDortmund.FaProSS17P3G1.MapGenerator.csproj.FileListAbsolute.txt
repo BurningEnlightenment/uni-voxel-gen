@@ -7,3 +7,9 @@ D:\development\Fachproject\P3G1\P3G1\src\UniDortmund.FaProSS17P3G1.MapGenerator\
 D:\development\Fachproject\P3G1\P3G1\src\UniDortmund.FaProSS17P3G1.MapGenerator\obj\Debug\netcoreapp1.1\UniDortmund.FaProSS17P3G1.MapGenerator.AssemblyInfo.cs
 D:\development\Fachproject\P3G1\P3G1\src\UniDortmund.FaProSS17P3G1.MapGenerator\obj\Debug\netcoreapp1.1\UniDortmund.FaProSS17P3G1.MapGenerator.dll
 D:\development\Fachproject\P3G1\P3G1\src\UniDortmund.FaProSS17P3G1.MapGenerator\obj\Debug\netcoreapp1.1\UniDortmund.FaProSS17P3G1.MapGenerator.pdb
+C:\PrivateData\Fachprojekt\P3G1\src\UniDortmund.FaProSS17P3G1.MapGenerator\bin\Debug\netcoreapp1.1\UniDortmund.FaProSS17P3G1.MapGenerator.deps.json
+C:\PrivateData\Fachprojekt\P3G1\src\UniDortmund.FaProSS17P3G1.MapGenerator\bin\Debug\netcoreapp1.1\UniDortmund.FaProSS17P3G1.MapGenerator.runtimeconfig.json
+C:\PrivateData\Fachprojekt\P3G1\src\UniDortmund.FaProSS17P3G1.MapGenerator\bin\Debug\netcoreapp1.1\UniDortmund.FaProSS17P3G1.MapGenerator.runtimeconfig.dev.json
+C:\PrivateData\Fachprojekt\P3G1\src\UniDortmund.FaProSS17P3G1.MapGenerator\obj\Debug\netcoreapp1.1\UniDortmund.FaProSS17P3G1.MapGenerator.csprojResolveAssemblyReference.cache
+C:\PrivateData\Fachprojekt\P3G1\src\UniDortmund.FaProSS17P3G1.MapGenerator\obj\Debug\netcoreapp1.1\UniDortmund.FaProSS17P3G1.MapGenerator.AssemblyInfo.cs
+C:\PrivateData\Fachprojekt\P3G1\src\UniDortmund.FaProSS17P3G1.MapGenerator\obj\Debug\netcoreapp1.1\UniDortmund.FaProSS17P3G1.MapGenerator.dll
