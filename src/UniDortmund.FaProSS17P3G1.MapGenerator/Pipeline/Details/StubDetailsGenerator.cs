@@ -20,8 +20,9 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline.Details
             {
                 generateNoiseMap();
             }
-            //Find Location for Flowers 
+            //Find Location for Flowers
             // R Dependend on Biome
+            int R = 0; //TODO: FIXME
             for (int yc = 0; yc < Constants.ChunkDimension; yc++)
             {
                 for (int xc = 0; xc < Constants.ChunkDimension; xc++)
