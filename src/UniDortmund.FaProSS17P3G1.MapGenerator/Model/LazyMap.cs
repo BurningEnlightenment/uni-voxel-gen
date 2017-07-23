@@ -25,10 +25,10 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
             {
                 var row = SafeRowAccess(ref x, ref y);
 
-                var column = row[y];
+                var column = row[x];
                 if (column == null)
                 {
-                    row[y] = column = new T();
+                    row[x] = column = new T();
                 }
 
                 return column;
@@ -36,7 +36,7 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
             set
             {
                 var row = SafeRowAccess(ref x, ref y);
-                row[y] = value;
+                row[x] = value;
             }
         }
 
@@ -46,19 +46,19 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
             x = MapCoord(x);
             y = MapCoord(y);
 
-            if (x >= mData.Count)
+            if (y >= mData.Count)
             {
-                mData.Resize(x + 1);
+                mData.Resize(y + 1);
             }
 
-            var row = mData[x];
+            var row = mData[y];
             if (row == null)
             {
-                mData[x] = row = new List<T>(y);
+                mData[y] = row = new List<T>(x + 1);
             }
-            if (y >= row.Count)
+            if (x >= row.Count)
             {
-                row.Resize(y + 1);
+                row.Resize(x + 1);
             }
             return row;
         }
@@ -97,18 +97,28 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
 
         public IEnumerator<(int X, int Y, T Value)> GetEnumerator()
         {
-            for (var i = 0; i < mData.Count; ++i)
+            for (var y = OriginY; y <= MaxY; ++y)
             {
-                var row = mData[i];
+                var row = mData[MapCoord(y)];
                 if (row == null)
                 {
                     continue;
                 }
 
-                for (var j = 0; j < row.Count; j++)
+                for (var x = OriginX; x <= MaxX; ++x)
                 {
-                    var value = row[j];
-                    yield return (ZigZagDec(j), ZigZagDec(i), value);
+                    var j = MapCoord(x);
+                    if (x >= row.Count)
+                    {
+                        continue;
+                    }
+                    var cell = row[j];
+                    if (cell == null)
+                    {
+                        continue;
+                    }
+
+                    yield return (x, y, cell);
                 }
             }
         }
