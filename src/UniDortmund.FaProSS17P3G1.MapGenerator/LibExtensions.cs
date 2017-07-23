@@ -38,7 +38,7 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator
             var hi = keyList.Count - 1;
             while (lo < hi)
             {
-                var m = lo - (hi - lo) / 2;
+                var m = lo + (hi - lo) / 2;
                 if (comp.Compare(keyList[m], value) < 0)
                 {
                     lo = m + 1;
