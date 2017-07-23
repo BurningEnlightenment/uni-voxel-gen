@@ -14,11 +14,17 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Utils
             = new Dictionary<BiomeType, Rgba32>
             {
                 { BiomeType.BioDebug, Rgba32.Pink },
+                { BiomeType.BioOcean, Rgba32.Blue },
                 { BiomeType.BioGrassland, Rgba32.Green },
+                { BiomeType.BioForest, Rgba32.DarkGreen },
+                { BiomeType.BioHighlands, Rgba32.LightGreen },
+                { BiomeType.BioTundra, Rgba32.Cyan },
+                { BiomeType.BioDesert, Rgba32.Yellow },
             };
 
         public static void PrintBiomeMap(this WorldMap map)
         {
+            map.CreateDirectory();
             var heigth = map.MapData.SizeX * BiomePicChunkDimension - 1;
             var width = map.MapData.SizeY * BiomePicChunkDimension - 1;
 
@@ -28,7 +34,7 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Utils
                 foreach (var column in map.MapData)
                 {
                     var xpx = (column.X - map.MapData.OriginX) * BiomePicChunkDimension;
-                    var ypx = (column.Y - map.MapData.OriginY) * BiomePicChunkDimension;
+                    var ypx = width - (column.Y - map.MapData.OriginY) * BiomePicChunkDimension - 1;
 
                     if (column.Value == null)
                     {
@@ -40,7 +46,7 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Utils
                     var rowspan = image.GetRowSpan(ypx);
                     foreach (var biome in column.Value.BiomeMap)
                     {
-                        rowspan = lastY == biome.Y ? rowspan : image.GetRowSpan(ypx + biome.Y);
+                        rowspan = lastY == biome.Y ? rowspan : image.GetRowSpan(ypx - biome.Y);
                         lastY = biome.Y;
 
                         rowspan[xpx + biome.X] = BiomeColor[biome.Value];
