@@ -14,7 +14,7 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline.Details.objectGenerato
             {
                 col.ChunkByZ(z+1).Data.Fill(() => ParticleType.PtAir);
             }
-            col[x,y,z+1] = ParticleType.PtFlower;
+            col[x,y,z+1] = ParticleType.PtRose;
             return col;
         }
     }

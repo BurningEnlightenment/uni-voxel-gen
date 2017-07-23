@@ -92,6 +92,9 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
         public IArray2D<BiomeType> BiomeMap { get; }
             = new FastArray2D<BiomeType>(ChunkDimension);
 
+        public IArray2D<int> HeightMap { get; }
+            = new FastArray2D<int>(ChunkDimension);
+
         public int FloorChunkIdx => CeilChunkIdx - mChunks.Count + 1;
         public int CeilChunkIdx => (mChunks.Count - 1) / 2;
 
