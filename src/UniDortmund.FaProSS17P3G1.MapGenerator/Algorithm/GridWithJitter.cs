@@ -1,4 +1,7 @@
-﻿namespace UniDortmund.FaProSS17P3G1.MapGenerator.Algorithm
+﻿using System.Collections.Generic;
+using System.Numerics;
+
+namespace UniDortmund.FaProSS17P3G1.MapGenerator.Algorithm
 {
     public class GridWithJitter
     {
@@ -15,5 +18,8 @@
 
         public (float X, float Y) this[float x, float y]
             => (x + mXNoise[x, y] * mScale, y + mYNoise[x, y] * mScale);
+
+        public Vector2 this[Vector2 point]
+            => point + new Vector2(mXNoise[point.X, point.Y] * mScale, mYNoise[point.X, point.Y] * mScale);
     }
 }

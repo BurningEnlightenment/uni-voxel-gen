@@ -69,7 +69,7 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
                 {
                     throw new ArgumentOutOfRangeException(nameof(y));
                 }
-                return mData[x + y * DimensionSize];
+                return mData[MapCoordinateToIndex(x, y)];
             }
             set
             {
@@ -81,7 +81,7 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
                 {
                     throw new ArgumentOutOfRangeException(nameof(y));
                 }
-                mData[x + y * DimensionSize] = value;
+                mData[MapCoordinateToIndex(x, y)] = value;
             }
         }
 
@@ -100,6 +100,9 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
 
         public IReadOnlyArray2D<T> ImmutableWrapper()
             => new FastReadOnlyArray2DWrapper<T>(this);
+
+        public int MapCoordinateToIndex(int x, int y)
+            => x + y * DimensionSize;
     }
 
     public class FastReadOnlyArray2DWrapper<T> : IReadOnlyArray2D<T>

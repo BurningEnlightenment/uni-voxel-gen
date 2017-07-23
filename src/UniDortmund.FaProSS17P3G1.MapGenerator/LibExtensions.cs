@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace UniDortmund.FaProSS17P3G1.MapGenerator
@@ -23,6 +24,35 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator
                     list.Add(elem);
                 }
             }
+        }
+
+        public static int LowerBound<TKey, TValue>(this SortedList<TKey, TValue> self, TKey value)
+        {
+            if (self == null)
+            {
+                throw new ArgumentNullException(nameof(self));
+            }
+            var comp = self.Comparer;
+            var keyList = self.Keys;
+            var lo = 0;
+            var hi = keyList.Count - 1;
+            while (lo < hi)
+            {
+                var m = lo + (hi - lo) / 2;
+                if (comp.Compare(keyList[m], value) < 0)
+                {
+                    lo = m + 1;
+                }
+                else
+                {
+                    hi = m - 1;
+                }
+            }
+            if (comp.Compare(keyList[lo], value) < 0)
+            {
+                lo++;
+            }
+            return lo;
         }
 
         public static int ZigZagEnc(int val)

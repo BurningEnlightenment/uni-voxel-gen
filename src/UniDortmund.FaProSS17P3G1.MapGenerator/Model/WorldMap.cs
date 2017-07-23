@@ -90,11 +90,14 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
             return new WorldMap(levelPath, worldInfo);
         }
 
+        public void CreateDirectory()
+            => Directory.CreateDirectory(LevelPath);
+
         public void Save()
         {
-            Directory.CreateDirectory(LevelPath);
+            CreateDirectory();
             WriteWorldInfoFile();
-            foreach (var column in MapData)
+            foreach (var column in MapData.Where(c => c.Value != null))
             {
                 var packedColumn = column.Value.Pack();
                 var fileName = $"{column.X:X8}-{column.Y:X8}.column";
@@ -107,7 +110,7 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
 
         public void SaveDebug()
         {
-            Directory.CreateDirectory(LevelPath);
+            CreateDirectory();
             WriteDebug(Path.Combine(LevelPath, WorldInfoFile + ".json"), WorldInfo);
 
             foreach (var column in MapData)

@@ -24,7 +24,7 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline.Terrain
         {
             var col = targetMap[x, y];
             var particleAssignments = col.BiomeMap
-                .MapValues(biome => BiomeParticleTypes[biome]);
+                .MapValues(biome => BiomeParticleTypes.TryGetValue(biome, out var particle) ? particle : ParticleType.PtDebug);
 
             foreach (var chunkData in col.UsedChunks().Select(pair => pair.Chunk.Data))
             {

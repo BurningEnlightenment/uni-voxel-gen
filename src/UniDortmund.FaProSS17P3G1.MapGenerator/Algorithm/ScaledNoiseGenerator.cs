@@ -14,11 +14,17 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Algorithm
         }
 
 
-        float INoiseGenerator.this[float x, float y]
+        public float this[float x, float y]
             => mImplementation[x * mScale, y * mScale];
 
-        float INoiseGenerator.this[float x, float y, float z]
+        public float this[float x, float y, float z]
             => mImplementation[x * mScale, y * mScale, z * mScale];
+
+        public float this[(float X, float Y) coords]
+            => this[coords.X, coords.Y];
+
+        public float this[(float X, float Y, float Z) coords]
+            => this[coords.X, coords.Y, coords.Z];
 
         public ulong Seed
         {

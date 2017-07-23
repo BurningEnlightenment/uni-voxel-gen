@@ -33,7 +33,7 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline
             foreach (var generator in GeneratorSequence)
             {
                 generator.NoiseGeneratorFactory =
-                    seed => new ScaledNoiseGenerator(new SimplexNoiseGenerator(seed), 1f / Constants.ChunkDimension);
+                    seed => new SimplexNoiseGenerator(seed);
             }
         }
 
