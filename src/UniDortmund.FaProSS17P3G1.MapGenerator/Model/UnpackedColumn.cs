@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using Google.Protobuf;
+using UniDortmund.FaProSS17P3G1.MapGenerator.Algorithm;
 using static UniDortmund.FaProSS17P3G1.MapGenerator.Constants;
 using static UniDortmund.FaProSS17P3G1.MapGenerator.LibExtensions;
 
@@ -145,16 +147,45 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
             }
         }
 
+        public IEnumerable<(int Coord, UnpackedChunk Chunk)> UsedChunksReversed()
+        {
+            for (var i = CeilChunkIdx; i >= FloorChunkIdx; --i)
+            {
+                var chunk = mChunks[ZigZagEnc(i)];
+                if (chunk != null)
+                {
+                    yield return (i, chunk);
+                }
+            }
+        }
+
+        public int HighestParticle(int x, int y)
+        {
+            foreach ((var chunkIdx, var chunk) in UsedChunksReversed())
+            {
+                for (var lz = ChunkDimension - 1; lz >= 0; --lz)
+                {
+                    var part = chunk.Data[x, y, lz];
+                    if (part != ParticleType.PtAir)
+                    {
+                        return chunkIdx * ChunkDimension + lz;
+                    }
+                }
+            }
+            return FloorChunkIdx * ChunkDimension;
+        }
+
+        public FastArray2D<int> SampleHeightMap()
+        {
+            var data = new FastArray2D<int>(ChunkDimension);
+            data.Fill(HighestParticle);
+            return data;
+        }
+
         public WorldColumn Pack() => new WorldColumn
         {
             Blocks = {mChunks.Select(block => block?.Pack() ?? GeneratorUtils.AirBlock )}
         };
-
-        public ParticleType this[int x, int y, int z]
-        {
-            get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
-        }
 
         public static int MapZToChunkNum(int z) => z / 16;
 
