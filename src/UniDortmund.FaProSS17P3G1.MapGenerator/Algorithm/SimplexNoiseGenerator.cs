@@ -12,13 +12,20 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Algorithm
         public SimplexNoiseGenerator(ulong seed)
         {
             mImpl = new FastNoise((int)seed);
+            mImpl.SetNoiseType(FastNoise.NoiseType.Simplex);
         }
 
-        float INoiseGenerator.this[float x, float y]
-            => mImpl.GetSimplex(x, y);
+        public float this[float x, float y]
+            => mImpl.GetNoise(x, y);
 
-        float INoiseGenerator.this[float x, float y, float z]
-            => mImpl.GetSimplex(x, y, z);
+        public float this[float x, float y, float z]
+            => mImpl.GetNoise(x, y, z);
+
+        public float this[(float X, float Y) coords]
+            => this[coords.X, coords.Y];
+
+        public float this[(float X, float Y, float Z) coords]
+            => this[coords.X, coords.Y, coords.Z];
 
         public ulong Seed
         {
