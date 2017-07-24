@@ -5,7 +5,7 @@ using System.Linq;
 using NotEnoughTime.Utils;
 using UniDortmund.FaProSS17P3G1.MapGenerator.Algorithm;
 using UniDortmund.FaProSS17P3G1.MapGenerator.Model;
-using static UniDortmund.FaProSS17P3G1.MapGenerator.Constants;
+using static UniDortmund.FaProSS17P3G1.MapGenerator.LibExtensions;
 
 namespace UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline.Terrain
 {
@@ -113,16 +113,6 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline.Terrain
                 }
             }
             return oldParticle;
-        }
-
-        public static int ZigZagEnc(int val)
-        {
-            return (val << 1) ^ (val >> 31);
-        }
-
-        public static int ZigZagDec(int val)
-        {
-            return (int)((uint)val >> 1) ^ -(val & 1);
         }
     }
 

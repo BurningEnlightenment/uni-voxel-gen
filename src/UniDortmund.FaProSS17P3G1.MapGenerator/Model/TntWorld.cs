@@ -43,32 +43,28 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model {
             "b3JsZEdlbmVyYXRvclNldHRpbmdzSAAaQwoaRmxhdFdvcmxkR2VuZXJhdG9y",
             "U2V0dGluZ3MSEQoJQ2VpbExldmVsGAEgASgFEhIKCkZsb29yTGV2ZWwYAiAB",
             "KAUiJQoURGVuc2l0eUdlbmVyYXRvclR5cGUSDQoJRmxhdFdvcmxkEABCEgoQ",
-            "U3BlY2lmaWNTZXR0aW5ncyKhAQoYVGVycmFpbkdlbmVyYXRvclNldHRpbmdz",
+            "U3BlY2lmaWNTZXR0aW5ncyKtAQoYVGVycmFpbkdlbmVyYXRvclNldHRpbmdz",
             "EkwKBFR5cGUYASABKA4yPi5mYXByby50bnQud29ybGQuVGVycmFpbkdlbmVy",
             "YXRvclNldHRpbmdzLlRlcnJhaW5HZW5lcmF0b3JUeXBlEgwKBFNlZWQYAiAB",
-            "KAYiKQoUVGVycmFpbkdlbmVyYXRvclR5cGUSEQoNTWFpbkJsb2NrT25seRAA",
-            "IpgBChhEZXRhaWxzR2VuZXJhdG9yU2V0dGluZ3MSTAoEVHlwZRgBIAEoDjI+",
-            "LmZhcHJvLnRudC53b3JsZC5EZXRhaWxzR2VuZXJhdG9yU2V0dGluZ3MuRGV0",
-            "YWlsc0dlbmVyYXRvclR5cGUSDAoEU2VlZBgCIAEoBiIgChREZXRhaWxzR2Vu",
-            "ZXJhdG9yVHlwZRIICgROb25lEAAinAIKCVdvcmxkSW5mbxI/Cg5CaW9tZUdl",
-            "bmVyYXRvchgCIAEoCzInLmZhcHJvLnRudC53b3JsZC5CaW9tZUdlbmVyYXRv",
-            "clNldHRpbmdzEkMKEERlbnNpdHlHZW5lcmF0b3IYAyABKAsyKS5mYXByby50",
-            "bnQud29ybGQuRGVuc2l0eUdlbmVyYXRvclNldHRpbmdzEkMKEFRlcnJhaW5H",
-            "ZW5lcmF0b3IYBCABKAsyKS5mYXByby50bnQud29ybGQuVGVycmFpbkdlbmVy",
-            "YXRvclNldHRpbmdzEkQKEURldGFpbHNHZW5lcmF0b3JzGAUgAygLMikuZmFw",
-            "cm8udG50LndvcmxkLkRldGFpbHNHZW5lcmF0b3JTZXR0aW5ncypNCgxQYXJ0",
-            "aWNsZVR5cGUSCwoHUHREZWJ1ZxAAEgkKBVB0QWlyEAESCwoHUHRXYXRlchAC",
-<<<<<<< Updated upstream
-            "EgoKBlB0RGlydBADKngKCUJpb21lVHlwZRIMCghCaW9EZWJ1ZxAAEgwKCEJp",
-            "b09jZWFuEAESEAoMQmlvR3Jhc3NsYW5kEAISDQoJQmlvRm9yZXN0EAMSEAoM",
-            "QmlvSGlnaGxhbmRzEAQSDQoJQmlvVHVuZHJhEAoSDQoJQmlvRGVzZXJ0EBRC",
-            "L6oCLFVuaURvcnRtdW5kLkZhUHJvU1MxN1AzRzEuTWFwR2VuZXJhdG9yLk1v",
-            "ZGVsYgZwcm90bzM="));
-=======
-            "EgoKBlB0RGlydBADEgwKCFB0Rmxvd2VyEB4qKwoJQmlvbWVUeXBlEgwKCEJp",
-            "b0RlYnVnEAASEAoMQmlvR3Jhc3NsYW5kEAFCL6oCLFVuaURvcnRtdW5kLkZh",
-            "UHJvU1MxN1AzRzEuTWFwR2VuZXJhdG9yLk1vZGVsYgZwcm90bzM="));
->>>>>>> Stashed changes
+            "KAYiNQoUVGVycmFpbkdlbmVyYXRvclR5cGUSEQoNTWFpbkJsb2NrT25seRAA",
+            "EgoKBlNpbXBsZRABIqMBChhEZXRhaWxzR2VuZXJhdG9yU2V0dGluZ3MSTAoE",
+            "VHlwZRgBIAEoDjI+LmZhcHJvLnRudC53b3JsZC5EZXRhaWxzR2VuZXJhdG9y",
+            "U2V0dGluZ3MuRGV0YWlsc0dlbmVyYXRvclR5cGUSDAoEU2VlZBgCIAEoBiIr",
+            "ChREZXRhaWxzR2VuZXJhdG9yVHlwZRIICgROb25lEAASCQoFQmFzaWMQASKc",
+            "AgoJV29ybGRJbmZvEj8KDkJpb21lR2VuZXJhdG9yGAIgASgLMicuZmFwcm8u",
+            "dG50LndvcmxkLkJpb21lR2VuZXJhdG9yU2V0dGluZ3MSQwoQRGVuc2l0eUdl",
+            "bmVyYXRvchgDIAEoCzIpLmZhcHJvLnRudC53b3JsZC5EZW5zaXR5R2VuZXJh",
+            "dG9yU2V0dGluZ3MSQwoQVGVycmFpbkdlbmVyYXRvchgEIAEoCzIpLmZhcHJv",
+            "LnRudC53b3JsZC5UZXJyYWluR2VuZXJhdG9yU2V0dGluZ3MSRAoRRGV0YWls",
+            "c0dlbmVyYXRvcnMYBSADKAsyKS5mYXByby50bnQud29ybGQuRGV0YWlsc0dl",
+            "bmVyYXRvclNldHRpbmdzKpoBCgxQYXJ0aWNsZVR5cGUSCwoHUHREZWJ1ZxAA",
+            "EgkKBVB0QWlyEAESCwoHUHRXYXRlchACEgoKBlB0RGlydBADEgsKB1B0R3Jh",
+            "c3MQChIKCgZQdFNhbmQQCxIKCgZQdFNub3cQDBIKCgZQdFJvc2UQDRILCgdQ",
+            "dFN0b25lEA4SDAoIUHRGbG93ZXIQHhINCglQdERyeUJ1c2gQHyp4CglCaW9t",
+            "ZVR5cGUSDAoIQmlvRGVidWcQABIMCghCaW9PY2VhbhABEhAKDEJpb0dyYXNz",
+            "bGFuZBACEg0KCUJpb0ZvcmVzdBADEhAKDEJpb0hpZ2hsYW5kcxAEEg0KCUJp",
+            "b1R1bmRyYRAKEg0KCUJpb0Rlc2VydBAUQi+qAixVbmlEb3J0bXVuZC5GYVBy",
+            "b1NTMTdQM0cxLk1hcEdlbmVyYXRvci5Nb2RlbGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.ParticleType), typeof(global::UniDortmund.FaProSS17P3G1.MapGenerator.Model.BiomeType), }, new pbr::GeneratedClrTypeInfo[] {
@@ -94,18 +90,17 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model {
     [pbr::OriginalName("PtDebug")] PtDebug = 0,
     [pbr::OriginalName("PtAir")] PtAir = 1,
     [pbr::OriginalName("PtWater")] PtWater = 2,
-    /// <summary>
-    ///
-    ///PtGrass
-    ///PtStone
-    ///PtSand
-    ///PtSnow
-    /// </summary>
     [pbr::OriginalName("PtDirt")] PtDirt = 3,
+    [pbr::OriginalName("PtGrass")] PtGrass = 10,
+    [pbr::OriginalName("PtSand")] PtSand = 11,
+    [pbr::OriginalName("PtSnow")] PtSnow = 12,
+    [pbr::OriginalName("PtRose")] PtRose = 13,
+    [pbr::OriginalName("PtStone")] PtStone = 14,
     /// <summary>
     ///details
     /// </summary>
     [pbr::OriginalName("PtFlower")] PtFlower = 30,
+    [pbr::OriginalName("PtDryBush")] PtDryBush = 31,
   }
 
   /// <summary>
@@ -1334,6 +1329,7 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model {
     public static partial class Types {
       public enum TerrainGeneratorType {
         [pbr::OriginalName("MainBlockOnly")] MainBlockOnly = 0,
+        [pbr::OriginalName("Simple")] Simple = 1,
       }
 
     }
@@ -1490,6 +1486,7 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model {
     public static partial class Types {
       public enum DetailsGeneratorType {
         [pbr::OriginalName("None")] None = 0,
+        [pbr::OriginalName("Basic")] Basic = 1,
       }
 
     }

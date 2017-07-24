@@ -194,5 +194,11 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
 
         public static int MapZToRelative(int z)
             => GeneratorUtils.Mod(z, ChunkDimension);
+
+        public ParticleType this[int x, int y, int z]
+        {
+            get => ChunkByZ(z).Data[x, y, MapZToRelative(z)];
+            set => ChunkByZ(z).Data[x, y, MapZToRelative(z)] = value;
+        }
     }
 }

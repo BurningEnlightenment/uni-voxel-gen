@@ -25,11 +25,14 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline
 
         private static readonly ImmutableDictionary<TerrainGeneratorType, GeneratorFactory<ITerrainGenerator, TerrainGeneratorSettings>> AvTerrainGenerators
             = ImmutableDictionary<TerrainGeneratorType, GeneratorFactory<ITerrainGenerator, TerrainGeneratorSettings>>.Empty
-                .Add(TerrainGeneratorType.MainBlockOnly, Terrain.MainBlockOnlyTerrainGenerator.Create);
+                .Add(TerrainGeneratorType.MainBlockOnly, Terrain.MainBlockOnlyTerrainGenerator.Create)
+                .Add(TerrainGeneratorType.Simple, Terrain.SimpleTerrainGenerator.Create);
 
-        public static readonly ImmutableDictionary<DetailsGeneratorType, GeneratorFactory<IDetailsGenerator, DetailsGeneratorSettings>> AvDetailsGenerators
+        public static readonly ImmutableDictionary<DetailsGeneratorType,
+            GeneratorFactory<IDetailsGenerator, DetailsGeneratorSettings>> AvDetailsGenerators
             = ImmutableDictionary<DetailsGeneratorType, GeneratorFactory<IDetailsGenerator, DetailsGeneratorSettings>>.Empty
-                .Add(DetailsGeneratorType.None, Details.StubDetailsGenerator.Create);
+                .Add(DetailsGeneratorType.None, Details.StubDetailsGenerator.Create)
+                .Add(DetailsGeneratorType.Basic, Details.BasicDetailsGenerator.Create);
 
         public ulong Seed;
 
