@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices.ComTypes;
 using Google.Protobuf;
 using UniDortmund.FaProSS17P3G1.MapGenerator.Algorithm;
 using static UniDortmund.FaProSS17P3G1.MapGenerator.Constants;
@@ -93,6 +92,9 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
 
         public IArray2D<BiomeType> BiomeMap { get; }
             = new FastArray2D<BiomeType>(ChunkDimension);
+
+        public IArray2D<int> HeightMap { get; }
+            = new FastArray2D<int>(ChunkDimension);
 
         public int FloorChunkIdx => CeilChunkIdx - mChunks.Count + 1;
         public int CeilChunkIdx => (mChunks.Count - 1) / 2;
@@ -191,5 +193,11 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
 
         public static int MapZToRelative(int z)
             => GeneratorUtils.Mod(z, ChunkDimension);
+
+        public ParticleType this[int x, int y, int z]
+        {
+            get => ChunkByZ(z).Data[x, y, MapZToRelative(z)];
+            set => ChunkByZ(z).Data[x, y, MapZToRelative(z)] = value;
+        }
     }
 }

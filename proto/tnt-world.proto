@@ -11,12 +11,16 @@ enum ParticleType
     PtAir = 1;
     PtWater = 2;
     PtDirt = 3;
-/*
-PtGrass
-PtStone
-PtSand
-PtSnow
-*/
+	
+    PtGrass = 10;
+    PtSand = 11;
+    PtSnow = 12;
+    PtRose = 13;
+    PtStone = 14;
+
+	//details
+	PtFlower = 30;
+    PtDryBush = 31;
 }
 
 message WorldColumn
@@ -98,6 +102,7 @@ message TerrainGeneratorSettings
     enum TerrainGeneratorType
     {
         MainBlockOnly = 0;
+        Simple = 1;
     }
 
     TerrainGeneratorType Type = 1;
@@ -109,6 +114,7 @@ message DetailsGeneratorSettings
     enum DetailsGeneratorType
     {
         None = 0;
+        Basic = 1;
     }
 
     DetailsGeneratorType Type = 1;
