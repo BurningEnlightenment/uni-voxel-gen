@@ -37,7 +37,10 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline.Details
             {
                 for (int xc = 0; xc < Constants.ChunkDimension; xc++)
                 {
-                    int R = FlowerLikeObjectDensity[col.BiomeMap[yc, xc]];
+                    if (!FlowerLikeObjectDensity.TryGetValue(col.BiomeMap[yc, xc], out var R))
+                    {
+                        continue;
+                    }
                     double max = 0;
                     for (int yn = yc - R; yn <= yc + R; yn++)
                     {

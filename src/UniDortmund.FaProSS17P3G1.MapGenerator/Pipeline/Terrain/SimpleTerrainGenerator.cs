@@ -26,8 +26,7 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline.Terrain
         public void ApplyTo(WorldMap targetMap, int x, int y)
         {
             var col = targetMap[x, y];
-
-            for (int i = 0; i <= col.CeilChunkIdx; i++)
+            for (int i = col.FloorChunkIdx; i <= col.CeilChunkIdx; i++)
             {
                 var chunk = col.Chunk(i);
                 chunk.Data.Mutate((cx, cy, cz, old) => BlockReplacementStrategy(cx, cy, cz, old, col, i));
@@ -41,7 +40,7 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline.Terrain
             int snowlevel = 20;
             int waterlevel = 0;
             int heightFirstAirBlock = col.HeightMap[x, y];
-            int iz = ZigZagDec(i) * 16;
+            int iz = i * Constants.ChunkDimension;
             int z = iz + cz;
             if (oldParticle != ParticleType.PtAir)
             {
@@ -66,7 +65,7 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline.Terrain
                         return ParticleType.PtDirt;
                     }
                     return ParticleType.PtGrass;
-                    
+
                 }
                 if (Biome == BiomeType.BioOcean)
                 {
@@ -96,7 +95,7 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline.Terrain
                     }
                     return ParticleType.PtStone;
                 }
-                if (Biome == BiomeType.BioTundra);
+                if (Biome == BiomeType.BioTundra)
                 {
                     if (z <= heightFirstAirBlock - 15)
                     {
@@ -105,7 +104,7 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline.Terrain
                     return ParticleType.PtSnow;
                 }
             }
-            if (Biome == BiomeType.BioOcean && oldParticle == ParticleType.PtAir)
+            else if (Biome == BiomeType.BioOcean)
             {
                 if (z < waterlevel)
                 {
