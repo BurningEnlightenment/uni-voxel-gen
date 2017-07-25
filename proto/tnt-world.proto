@@ -80,12 +80,18 @@ message DensityGeneratorSettings
     enum DensityGeneratorType
     {
         FlatWorld = 0;
+        HeightNoise = 2;
     }
 
     message FlatWorldGeneratorSettings
     {
         int32 CeilLevel = 1;
         int32 FloorLevel = 2;
+    }
+
+    message HeightNoiseGeneratorSettings
+    {
+        int32 FloorLevel = 1;
     }
 
     DensityGeneratorType Type = 1;

@@ -21,7 +21,8 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline
 
         private static readonly ImmutableDictionary<DensityGeneratorType, GeneratorFactory<IDensityGenerator, DensityGeneratorSettings>> AvDensityGenerators
             = ImmutableDictionary<DensityGeneratorType, GeneratorFactory<IDensityGenerator, DensityGeneratorSettings>>.Empty
-                .Add(DensityGeneratorType.FlatWorld, Density.FlatWorldGenerator.Create);
+                .Add(DensityGeneratorType.FlatWorld, Density.FlatWorldGenerator.Create)
+                .Add(DensityGeneratorType.HeightNoise, Density.HeightNoiseGenerator.Create);
 
         private static readonly ImmutableDictionary<TerrainGeneratorType, GeneratorFactory<ITerrainGenerator, TerrainGeneratorSettings>> AvTerrainGenerators
             = ImmutableDictionary<TerrainGeneratorType, GeneratorFactory<ITerrainGenerator, TerrainGeneratorSettings>>.Empty
