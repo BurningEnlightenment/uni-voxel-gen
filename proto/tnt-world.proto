@@ -89,11 +89,6 @@ message DensityGeneratorSettings
         int32 FloorLevel = 2;
     }
 
-    message HeightNoiseGeneratorSettings
-    {
-        int32 FloorLevel = 1;
-    }
-
     DensityGeneratorType Type = 1;
     fixed64 Seed = 2;
 

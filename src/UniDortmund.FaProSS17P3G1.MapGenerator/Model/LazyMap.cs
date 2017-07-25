@@ -6,8 +6,8 @@ using static UniDortmund.FaProSS17P3G1.MapGenerator.LibExtensions;
 
 namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
 {
-    public class LazyMap<T> : IEnumerable<(int X, int Y, T Value)>
-        where T: class, new()
+    public class FlexLazyMap<T> : IEnumerable<(int X, int Y, T Value)>
+        where T: class
     {
         private readonly List<List<T>> mData
             = new List<List<T>>();
@@ -19,6 +19,8 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
         public int MaxX => OriginX + SizeX - 1;
         public int MaxY => OriginY + SizeY - 1;
 
+        public Func<T> DefaultValueProvider { get; set; }
+
         public T this[int x, int y]
         {
             get
@@ -28,7 +30,7 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
                 var column = row[x];
                 if (column == null)
                 {
-                    row[x] = column = new T();
+                    row[x] = column = DefaultValueProvider();
                 }
 
                 return column;
@@ -108,7 +110,7 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
                 for (var x = OriginX; x <= MaxX; ++x)
                 {
                     var j = MapCoord(x);
-                    if (x >= row.Count)
+                    if (j >= row.Count)
                     {
                         continue;
                     }
@@ -125,5 +127,14 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Model
 
         IEnumerator IEnumerable.GetEnumerator()
             => GetEnumerator();
+    }
+
+    public class LazyMap<T> : FlexLazyMap<T>
+        where T : class, new()
+    {
+        public LazyMap()
+        {
+            DefaultValueProvider = () => new T();
+        }
     }
 }

@@ -21,5 +21,11 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator
             var r = x % m;
             return r < 0 ? r + m : r;
         }
+
+        public static (int X, int Y) ToGlobal(int cx, int lx, int cy, int ly)
+            => (cx * Constants.ChunkDimension + lx, cy * Constants.ChunkDimension + ly);
+
+        public static (float X, float Y) ToGlobalF(int cx, int lx, int cy, int ly)
+            => (cx * Constants.ChunkDimension + lx, cy * Constants.ChunkDimension + ly);
     }
 }

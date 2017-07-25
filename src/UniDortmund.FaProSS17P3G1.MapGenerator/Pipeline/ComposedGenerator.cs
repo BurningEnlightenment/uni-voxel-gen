@@ -1,6 +1,8 @@
-﻿using System;
+﻿#define DEBUG
+using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
 using NotEnoughTime.Utils.Random;
@@ -64,6 +66,7 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline
             {
                 for (var j = y; j < targetY; ++j)
                 {
+                    Debug.WriteLine($"generate({i}, {j})");
                     Generate(i, j);
                 }
             }
@@ -73,6 +76,7 @@ namespace UniDortmund.FaProSS17P3G1.MapGenerator.Pipeline
         {
             foreach (var generator in GeneratorSequence)
             {
+                Debug.WriteLine($"generate({x}, {y}) step {generator.GetType().Name}");
                 generator.ApplyTo(mTargetMap, x, y);
             }
         }

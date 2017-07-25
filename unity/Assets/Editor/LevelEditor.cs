@@ -19,7 +19,7 @@ public class LevelEditor : Editor
 
         if (GUILayout.Button("Build"))
         {
-            openColums(@"D:\P3G1\src\UniDortmund.FaProSS17P3G1.MapGenerator.Tests\bin\Debug\netcoreapp1.1\tmp\test-level");
+            openColums(@"C:\Users\henri\devel\fapro3\src\UniDortmund.FaProSS17P3G1.MapGenerator.Tests\bin\Release\netcoreapp1.1\tmp\first");
         }
         if (GUILayout.Button("Delete"))
         {
